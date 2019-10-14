@@ -17,7 +17,7 @@ void str_sub(char *original_str,char *remove,int remove_len,char *replace_with)
 		bld_str = sdscat(bld_str,"%s");
 
 		sds line = sdsnew(yytext);
-			tokens = sdssplitlen(line,sdslen(line),remove,2,&count);
+			tokens = sdssplitlen(line,sdslen(line),remove,remove_len,&count);
 			for (j = 1; j < count; j++)
 				printf(bld_str,tokens[0], tokens[j]);
 				sdsfreesplitres(tokens,count);
