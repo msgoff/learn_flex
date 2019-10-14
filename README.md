@@ -8,7 +8,7 @@ run make and that will start a repl like environment
 make
 flex 1.l
 gcc -lfl lex.yy.c sds.c
-./a.out
+./a.out  
 #input    
 some_string_1 = 5                    
 #output  
