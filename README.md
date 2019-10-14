@@ -10,7 +10,7 @@ flex 1.l
 gcc -lfl lex.yy.c sds.c
 ./a.out
 #input    
-some_string_1 = 5                  
+some_string_1 = 5                    
 #output  
 some__replace_stringring_1 = 5
 
