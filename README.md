@@ -5,10 +5,7 @@ https://github.com/antirez/sds.git
 
 run make and that will start a repl like environment  
 
-make  
-flex 1.l  
-gcc -lfl lex.yy.c sds.c  
-./a.out  
+ 
 #input    
 string_1 = 5  
 #output  
