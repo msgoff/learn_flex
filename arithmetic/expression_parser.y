@@ -15,9 +15,11 @@ extern FILE *yyin;
 
 int main()
 {
-	while(!feof(yyin)) {
+	do 
+		{
 		yyparse();
 	}
+		while(!feof(yyin));
 }
 
 yyerror(s)
