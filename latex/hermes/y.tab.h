@@ -1,0 +1,1390 @@
+/* A Bison parser, made by GNU Bison 3.3.2.  */
+
+/* Bison interface for Yacc-like parsers in C
+
+   Copyright (C) 1984, 1989-1990, 2000-2015, 2018-2019 Free Software Foundation,
+   Inc.
+
+   This program is free software: you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
+
+/* As a special exception, you may create a larger work that contains
+   part or all of the Bison parser skeleton and distribute that work
+   under terms of your choice, so long as that work isn't itself a
+   parser generator using the skeleton or a modified version thereof
+   as a parser skeleton.  Alternatively, if you modify or redistribute
+   the parser skeleton itself, you may (at your option) remove this
+   special exception, which will cause the skeleton and the resulting
+   Bison output files to be licensed under the GNU General Public
+   License without this special exception.
+
+   This special exception was added by the Free Software Foundation in
+   version 2.2 of Bison.  */
+
+/* Undocumented macros, especially those whose name start with YY_,
+   are private implementation details.  Do not rely on them.  */
+
+#ifndef YY_YY_Y_TAB_H_INCLUDED
+# define YY_YY_Y_TAB_H_INCLUDED
+/* Debug traces.  */
+#ifndef YYDEBUG
+# define YYDEBUG 0
+#endif
+#if YYDEBUG
+extern int yydebug;
+#endif
+
+/* Token type.  */
+#ifndef YYTOKENTYPE
+# define YYTOKENTYPE
+  enum yytokentype
+  {
+    ANY = 258,
+    SET = 259,
+    END = 260,
+    DVIY = 261,
+    PAR = 262,
+    FontChange = 263,
+    SPACE = 264,
+    CR = 265,
+    BLeft = 266,
+    ELeft = 267,
+    BRight = 268,
+    ERight = 269,
+    LeftNull = 270,
+    RightNull = 271,
+    BTBOX = 272,
+    ETBOX = 273,
+    BMBOX = 274,
+    EMBOX = 275,
+    BFBOX = 276,
+    EFBOX = 277,
+    BPUBLISHED = 278,
+    EPUBLISHED = 279,
+    BMATHICS = 280,
+    EMATHICS = 281,
+    BICSIDX = 282,
+    EICSIDX = 283,
+    BICSDESC = 284,
+    EICSDESC = 285,
+    BMATVERW = 286,
+    EMATVERW = 287,
+    BMATHICSSUB = 288,
+    EMATHICSSUB = 289,
+    BackgroundColor = 290,
+    POST_POST = 291,
+    BENTRY = 292,
+    EENTRY = 293,
+    BTITLE = 294,
+    ETITLE = 295,
+    BAUTHOR = 296,
+    EAUTHOR = 297,
+    BName = 298,
+    EName = 299,
+    BDATE = 300,
+    EDATE = 301,
+    BTHANKS = 302,
+    ETHANKS = 303,
+    MAKETITLE = 304,
+    BComment = 305,
+    EComment = 306,
+    BCAuthor = 307,
+    ECAuthor = 308,
+    BSubjectClass = 309,
+    ESubjectClass = 310,
+    BDedicatory = 311,
+    EDedicatory = 312,
+    BURL = 313,
+    EURL = 314,
+    BEMAIL = 315,
+    EEMAIL = 316,
+    BAffiliation = 317,
+    EAffiliation = 318,
+    BAddress = 319,
+    EAddress = 320,
+    BCAddress = 321,
+    ECAddress = 322,
+    BKeywords = 323,
+    EKeywords = 324,
+    BPACS = 325,
+    EPACS = 326,
+    BIdLine = 327,
+    EIdLine = 328,
+    BDOI = 329,
+    EDOI = 330,
+    BCopyright = 331,
+    ECopyright = 332,
+    BLocation = 333,
+    ELocation = 334,
+    BJournal = 335,
+    EJournal = 336,
+    BLogo = 337,
+    ELogo = 338,
+    BBranch = 339,
+    EBranch = 340,
+    BEQTAG = 341,
+    EEQTAG = 342,
+    BBINOM = 343,
+    EBINOM = 344,
+    BBINOMUP = 345,
+    EBINOMUP = 346,
+    BBINOMDOWN = 347,
+    EBINOMDOWN = 348,
+    BHEADLINE = 349,
+    EHEADLINE = 350,
+    BFOOTLINE = 351,
+    EFOOTLINE = 352,
+    BEnv = 353,
+    EEnv = 354,
+    BAbstract = 355,
+    EAbstract = 356,
+    AbsLang = 357,
+    Item = 358,
+    BList = 359,
+    EList = 360,
+    BLabel = 361,
+    ELabel = 362,
+    BBibliography = 363,
+    EBibliography = 364,
+    BBibLabel = 365,
+    EBibLabel = 366,
+    BSectMark = 367,
+    ESectMark = 368,
+    SectType = 369,
+    BSectLabel = 370,
+    ESectLabel = 371,
+    BSectTitle = 372,
+    ESectTitle = 373,
+    BCaption = 374,
+    ECaption = 375,
+    BFigureTag = 376,
+    EFigureTag = 377,
+    FigureFileName = 378,
+    EPSFigureFileName = 379,
+    Id = 380,
+    BRef = 381,
+    Ref = 382,
+    ERef = 383,
+    BCite = 384,
+    ECite = 385,
+    BCiteLabel = 386,
+    ECiteLabel = 387,
+    CiteSRef = 388,
+    BFootnoteMark = 389,
+    EFootnoteMark = 390,
+    BFootnote = 391,
+    EFootnote = 392,
+    BFloat = 393,
+    EFloat = 394,
+    FType = 395,
+    BTabular = 396,
+    ETabular = 397,
+    BTabularx = 398,
+    ETabularx = 399,
+    FOption = 400,
+    AOption = 401,
+    BLTable = 402,
+    ELTable = 403,
+    BLTBody = 404,
+    ELTBody = 405,
+    BLTCaption = 406,
+    ELTCaption = 407,
+    TABCR = 408,
+    HLINE = 409,
+    SPAN = 410,
+    BMultiColumn = 411,
+    EMultiColumn = 412,
+    MultiColumnNumber = 413,
+    MultiColumnFormat = 414,
+    TACCENT = 415,
+    TACCENTU = 416,
+    MACCENT = 417,
+    BIGSQCUP = 418,
+    BIGSQCAP = 419,
+    IMATHB = 420,
+    IMATHE = 421,
+    DMATHB = 422,
+    DMATHE = 423,
+    Bfile = 424,
+    Efile = 425,
+    EQNO = 426,
+    LEQNO = 427,
+    REQNO = 428,
+    BEqNum = 429,
+    EEqNum = 430,
+    BFoot = 431,
+    EFoot = 432,
+    BHead = 433,
+    EHead = 434,
+    BPage = 435,
+    EPage = 436,
+    ALIGN = 437,
+    BMTABLE = 438,
+    EMTABLE = 439,
+    BARRAY = 440,
+    EARRAY = 441,
+    BEqnArray = 442,
+    EEqnArray = 443,
+    BAligned = 444,
+    EAligned = 445,
+    BAlign = 446,
+    EAlign = 447,
+    BEQALIGN = 448,
+    EEQALIGN = 449,
+    BSplit = 450,
+    ESplit = 451,
+    BSP = 452,
+    ESP = 453,
+    BPower = 454,
+    Power = 455,
+    EPower = 456,
+    BSB = 457,
+    ESB = 458,
+    SBCHAR = 459,
+    LT = 460,
+    GT = 461,
+    NEQ = 462,
+    ARCCOS = 463,
+    ARCSIN = 464,
+    ARCTAN = 465,
+    ARG = 466,
+    COS = 467,
+    COSH = 468,
+    COT = 469,
+    COTH = 470,
+    CSC = 471,
+    DEG = 472,
+    DET = 473,
+    DIM = 474,
+    EXP = 475,
+    GCD = 476,
+    HOM = 477,
+    INF = 478,
+    KER = 479,
+    LG = 480,
+    LIM = 481,
+    LIMINF = 482,
+    LIMSUP = 483,
+    LN = 484,
+    LOG = 485,
+    MAX = 486,
+    MIN = 487,
+    PR = 488,
+    SEC = 489,
+    SIN = 490,
+    SINH = 491,
+    SUP = 492,
+    TAN = 493,
+    TANH = 494,
+    CDOTS = 495,
+    DDOTS = 496,
+    LDOTS = 497,
+    VDOTS = 498,
+    BFRAC = 499,
+    FRACN = 500,
+    FRACD = 501,
+    EFRAC = 502,
+    OVER = 503,
+    CHOOSE = 504,
+    ATOP = 505,
+    BBUILDREL = 506,
+    BUILDREL = 507,
+    EBUILDREL = 508,
+    MAPSTO = 509,
+    LMAPSTO = 510,
+    MODELS = 511,
+    HLARROW = 512,
+    HRARROW = 513,
+    lLARROW = 514,
+    LLARROW = 515,
+    lRARROW = 516,
+    LRARROW = 517,
+    lLRARROW = 518,
+    LLRARROW = 519,
+    BOWTIE = 520,
+    BOVERLARROW = 521,
+    EOVERLARROW = 522,
+    BOVERRARROW = 523,
+    EOVERRARROW = 524,
+    BUNDERLARROW = 525,
+    EUNDERLARROW = 526,
+    BUNDERRARROW = 527,
+    EUNDERRARROW = 528,
+    BOVERBRACE = 529,
+    EOVERBRACE = 530,
+    BUNDERBRACE = 531,
+    EUNDERBRACE = 532,
+    BWIDEHAT = 533,
+    EWIDEHAT = 534,
+    BWIDETILDE = 535,
+    EWIDETILDE = 536,
+    BDOT = 537,
+    EDOT = 538,
+    BOVERLINE = 539,
+    EOVERLINE = 540,
+    BUNDERLINE = 541,
+    EUNDERLINE = 542,
+    BMO = 543,
+    EMO = 544,
+    BSQRT = 545,
+    SQRT = 546,
+    ESQRT = 547,
+    BROOT = 548,
+    ROOT = 549,
+    EROOT = 550,
+    BRoot = 551,
+    Root = 552,
+    ERoot = 553,
+    BSqrt = 554,
+    ESqrt = 555,
+    Bfunc = 556,
+    Bfarg = 557,
+    Efarg = 558,
+    Efunc = 559,
+    BInterval = 560,
+    Interval = 561,
+    EInterval = 562,
+    BCompose = 563,
+    Compose = 564,
+    ECompose = 565,
+    BInverse = 566,
+    Inverse = 567,
+    EInverse = 568,
+    Ident = 569,
+    BDomain = 570,
+    EDomain = 571,
+    BCodomain = 572,
+    ECodomain = 573,
+    BImage = 574,
+    EImage = 575,
+    BAmsCases = 576,
+    EAmsCases = 577,
+    BCases = 578,
+    ECases = 579,
+    BCasesRow = 580,
+    ECasesRow = 581,
+    BBra = 582,
+    EBra = 583,
+    BKet = 584,
+    EKet = 585,
+    NOTIN = 586,
+    BPlus = 587,
+    Plus = 588,
+    EPlus = 589,
+    BMinus = 590,
+    Minus = 591,
+    EMinus = 592,
+    BTimes = 593,
+    Times = 594,
+    ETimes = 595,
+    BQuotient = 596,
+    Quotient = 597,
+    EQuotient = 598,
+    BFactorial = 599,
+    Factorial = 600,
+    EFactorial = 601,
+    BFrac = 602,
+    Fracn = 603,
+    Fracd = 604,
+    EFrac = 605,
+    BMaxl = 606,
+    BMaxc = 607,
+    EMaxl = 608,
+    EMaxc = 609,
+    BVar = 610,
+    EVar = 611,
+    BCond = 612,
+    ECond = 613,
+    BExpr = 614,
+    EExpr = 615,
+    BMinl = 616,
+    BMinc = 617,
+    EMinl = 618,
+    EMinc = 619,
+    BRem = 620,
+    Rem = 621,
+    ERem = 622,
+    REM = 623,
+    BPMOD = 624,
+    EPMOD = 625,
+    BGcd = 626,
+    EGcd = 627,
+    BLcm = 628,
+    ELcm = 629,
+    LCM = 630,
+    BRe = 631,
+    ERe = 632,
+    BIm = 633,
+    EIm = 634,
+    AND = 635,
+    BLand = 636,
+    Land = 637,
+    ELand = 638,
+    OR = 639,
+    BLor = 640,
+    Lor = 641,
+    ELor = 642,
+    XOR = 643,
+    BXor = 644,
+    Xor = 645,
+    EXor = 646,
+    BNot = 647,
+    ENot = 648,
+    BImplies = 649,
+    Implies = 650,
+    EImplies = 651,
+    BForall = 652,
+    EForall = 653,
+    BAssert = 654,
+    EAssert = 655,
+    BExists = 656,
+    EExists = 657,
+    Babs = 658,
+    Eabs = 659,
+    Bconjugate = 660,
+    Econjugate = 661,
+    BArg = 662,
+    EArg = 663,
+    Bfloor = 664,
+    Efloor = 665,
+    Bceil = 666,
+    Eceil = 667,
+    BFactor = 668,
+    Factor = 669,
+    EFactor = 670,
+    BEqual = 671,
+    Equal = 672,
+    EEqual = 673,
+    BNequal = 674,
+    Nequal = 675,
+    ENequal = 676,
+    BLequal = 677,
+    Lequal = 678,
+    ELequal = 679,
+    BGequal = 680,
+    Gequal = 681,
+    EGequal = 682,
+    BEquiv = 683,
+    Equiv = 684,
+    EEquiv = 685,
+    BApprox = 686,
+    Approx = 687,
+    EApprox = 688,
+    BGthan = 689,
+    Gthan = 690,
+    EGthan = 691,
+    BLthan = 692,
+    Lthan = 693,
+    ELthan = 694,
+    BInt = 695,
+    EInt = 696,
+    BIntll = 697,
+    EIntll = 698,
+    BIntul = 699,
+    EIntul = 700,
+    BIntarg = 701,
+    EIntarg = 702,
+    BIntbe = 703,
+    EIntbe = 704,
+    BDiff = 705,
+    EDiff = 706,
+    BDiffbe = 707,
+    EDiffbe = 708,
+    BDiffdeg = 709,
+    EDiffdeg = 710,
+    BDiffarg = 711,
+    EDiffarg = 712,
+    BDivs = 713,
+    BDivt = 714,
+    EDiv = 715,
+    BGradt = 716,
+    BGrads = 717,
+    EGrad = 718,
+    BCurlt = 719,
+    BCurls = 720,
+    ECurl = 721,
+    BLaplacian = 722,
+    ELaplacian = 723,
+    BSum = 724,
+    ESum = 725,
+    BSumll = 726,
+    ESumll = 727,
+    BSumul = 728,
+    ESumul = 729,
+    BSumarg = 730,
+    ESumarg = 731,
+    BProd = 732,
+    EProd = 733,
+    BProdll = 734,
+    EProdll = 735,
+    BProdul = 736,
+    EProdul = 737,
+    BProdarg = 738,
+    EProdarg = 739,
+    BLimit = 740,
+    ELimit = 741,
+    BLimitarg = 742,
+    ELimitarg = 743,
+    BTendsto = 744,
+    Tendsto = 745,
+    ETendsto = 746,
+    BSetl = 747,
+    ESetl = 748,
+    BSetc = 749,
+    ESetc = 750,
+    BSubset = 751,
+    Subset = 752,
+    ESubset = 753,
+    BSubseteq = 754,
+    Subseteq = 755,
+    ESubseteq = 756,
+    BNotsubset = 757,
+    Notsubset = 758,
+    ENotsubset = 759,
+    BNotsubseteq = 760,
+    Notsubseteq = 761,
+    ENotsubseteq = 762,
+    BListl = 763,
+    EListl = 764,
+    BListcarg = 765,
+    EListcarg = 766,
+    BListc = 767,
+    EListc = 768,
+    BUnion = 769,
+    Union = 770,
+    EUnion = 771,
+    BIntersect = 772,
+    Intersect = 773,
+    EIntersect = 774,
+    BIn = 775,
+    In = 776,
+    EIn = 777,
+    BNotin = 778,
+    Notin = 779,
+    ENotin = 780,
+    BSetdiff = 781,
+    Setdiff = 782,
+    ESetdiff = 783,
+    BCard = 784,
+    ECard = 785,
+    BCartesian = 786,
+    Cartesian = 787,
+    ECartesian = 788,
+    BSin = 789,
+    ESin = 790,
+    BCos = 791,
+    ECos = 792,
+    BTan = 793,
+    ETan = 794,
+    BSec = 795,
+    ESec = 796,
+    BCsc = 797,
+    ECsc = 798,
+    BCot = 799,
+    ECot = 800,
+    BSinh = 801,
+    ESinh = 802,
+    BCosh = 803,
+    ECosh = 804,
+    BTanh = 805,
+    ETanh = 806,
+    BSech = 807,
+    Sech = 808,
+    ESech = 809,
+    BCsch = 810,
+    Csch = 811,
+    ECsch = 812,
+    BCoth = 813,
+    ECoth = 814,
+    BArccos = 815,
+    EArccos = 816,
+    BArccosh = 817,
+    Arccosh = 818,
+    EArccosh = 819,
+    BArcsin = 820,
+    EArcsin = 821,
+    BArctan = 822,
+    EArctan = 823,
+    BArccot = 824,
+    Arccot = 825,
+    EArccot = 826,
+    BArccoth = 827,
+    Arccoth = 828,
+    EArccoth = 829,
+    BArccsc = 830,
+    Arccsc = 831,
+    EArccsc = 832,
+    BArccsch = 833,
+    Arccsch = 834,
+    EArccsch = 835,
+    BArcsec = 836,
+    Arcsec = 837,
+    EArcsec = 838,
+    BArcsech = 839,
+    Arcsech = 840,
+    EArcsech = 841,
+    BArcsinh = 842,
+    Arcsinh = 843,
+    EArcsinh = 844,
+    BArctanh = 845,
+    Arctanh = 846,
+    EArctanh = 847,
+    BLn = 848,
+    ELn = 849,
+    BLog = 850,
+    ELog = 851,
+    BLg = 852,
+    ELg = 853,
+    BExp = 854,
+    EExp = 855,
+    BMean = 856,
+    EMean = 857,
+    BSDev = 858,
+    ESDev = 859,
+    BVariance = 860,
+    Variance = 861,
+    EVariance = 862,
+    BMedian = 863,
+    Median = 864,
+    EMedian = 865,
+    BMode = 866,
+    Mode = 867,
+    EMode = 868,
+    BMoment = 869,
+    EMoment = 870,
+    BMomentDeg = 871,
+    EMomentDeg = 872,
+    BMomentArg = 873,
+    EMomentArg = 874,
+    BMomenta = 875,
+    EMomenta = 876,
+    BMabout = 877,
+    EMabout = 878,
+    BMATRIX = 879,
+    EMATRIX = 880,
+    BVector = 881,
+    EVector = 882,
+    BMatrix = 883,
+    EMatrix = 884,
+    BTranspose = 885,
+    ETranspose = 886,
+    BDet = 887,
+    EDet = 888,
+    BSelector = 889,
+    SelectorMatrix = 890,
+    ESelector = 891,
+    BVectorProduct = 892,
+    VectorProduct = 893,
+    EVectorProduct = 894,
+    BScalarProduct = 895,
+    ScalarProduct = 896,
+    EScalarProduct = 897,
+    BOuterProduct = 898,
+    OuterProduct = 899,
+    EOuterProduct = 900,
+    Integers = 901,
+    Naturals = 902,
+    Rationals = 903,
+    Reals = 904,
+    Complexes = 905,
+    Primes = 906,
+    EPrimes = 907,
+    ExponentialE = 908,
+    ImaginaryI = 909,
+    NotANumber = 910,
+    True = 911,
+    False = 912,
+    Emptyset = 913,
+    PiCst = 914,
+    EulerGamma = 915,
+    Infty = 916,
+    HBar = 917,
+    Trace = 918
+  };
+#endif
+/* Tokens.  */
+#define ANY 258
+#define SET 259
+#define END 260
+#define DVIY 261
+#define PAR 262
+#define FontChange 263
+#define SPACE 264
+#define CR 265
+#define BLeft 266
+#define ELeft 267
+#define BRight 268
+#define ERight 269
+#define LeftNull 270
+#define RightNull 271
+#define BTBOX 272
+#define ETBOX 273
+#define BMBOX 274
+#define EMBOX 275
+#define BFBOX 276
+#define EFBOX 277
+#define BPUBLISHED 278
+#define EPUBLISHED 279
+#define BMATHICS 280
+#define EMATHICS 281
+#define BICSIDX 282
+#define EICSIDX 283
+#define BICSDESC 284
+#define EICSDESC 285
+#define BMATVERW 286
+#define EMATVERW 287
+#define BMATHICSSUB 288
+#define EMATHICSSUB 289
+#define BackgroundColor 290
+#define POST_POST 291
+#define BENTRY 292
+#define EENTRY 293
+#define BTITLE 294
+#define ETITLE 295
+#define BAUTHOR 296
+#define EAUTHOR 297
+#define BName 298
+#define EName 299
+#define BDATE 300
+#define EDATE 301
+#define BTHANKS 302
+#define ETHANKS 303
+#define MAKETITLE 304
+#define BComment 305
+#define EComment 306
+#define BCAuthor 307
+#define ECAuthor 308
+#define BSubjectClass 309
+#define ESubjectClass 310
+#define BDedicatory 311
+#define EDedicatory 312
+#define BURL 313
+#define EURL 314
+#define BEMAIL 315
+#define EEMAIL 316
+#define BAffiliation 317
+#define EAffiliation 318
+#define BAddress 319
+#define EAddress 320
+#define BCAddress 321
+#define ECAddress 322
+#define BKeywords 323
+#define EKeywords 324
+#define BPACS 325
+#define EPACS 326
+#define BIdLine 327
+#define EIdLine 328
+#define BDOI 329
+#define EDOI 330
+#define BCopyright 331
+#define ECopyright 332
+#define BLocation 333
+#define ELocation 334
+#define BJournal 335
+#define EJournal 336
+#define BLogo 337
+#define ELogo 338
+#define BBranch 339
+#define EBranch 340
+#define BEQTAG 341
+#define EEQTAG 342
+#define BBINOM 343
+#define EBINOM 344
+#define BBINOMUP 345
+#define EBINOMUP 346
+#define BBINOMDOWN 347
+#define EBINOMDOWN 348
+#define BHEADLINE 349
+#define EHEADLINE 350
+#define BFOOTLINE 351
+#define EFOOTLINE 352
+#define BEnv 353
+#define EEnv 354
+#define BAbstract 355
+#define EAbstract 356
+#define AbsLang 357
+#define Item 358
+#define BList 359
+#define EList 360
+#define BLabel 361
+#define ELabel 362
+#define BBibliography 363
+#define EBibliography 364
+#define BBibLabel 365
+#define EBibLabel 366
+#define BSectMark 367
+#define ESectMark 368
+#define SectType 369
+#define BSectLabel 370
+#define ESectLabel 371
+#define BSectTitle 372
+#define ESectTitle 373
+#define BCaption 374
+#define ECaption 375
+#define BFigureTag 376
+#define EFigureTag 377
+#define FigureFileName 378
+#define EPSFigureFileName 379
+#define Id 380
+#define BRef 381
+#define Ref 382
+#define ERef 383
+#define BCite 384
+#define ECite 385
+#define BCiteLabel 386
+#define ECiteLabel 387
+#define CiteSRef 388
+#define BFootnoteMark 389
+#define EFootnoteMark 390
+#define BFootnote 391
+#define EFootnote 392
+#define BFloat 393
+#define EFloat 394
+#define FType 395
+#define BTabular 396
+#define ETabular 397
+#define BTabularx 398
+#define ETabularx 399
+#define FOption 400
+#define AOption 401
+#define BLTable 402
+#define ELTable 403
+#define BLTBody 404
+#define ELTBody 405
+#define BLTCaption 406
+#define ELTCaption 407
+#define TABCR 408
+#define HLINE 409
+#define SPAN 410
+#define BMultiColumn 411
+#define EMultiColumn 412
+#define MultiColumnNumber 413
+#define MultiColumnFormat 414
+#define TACCENT 415
+#define TACCENTU 416
+#define MACCENT 417
+#define BIGSQCUP 418
+#define BIGSQCAP 419
+#define IMATHB 420
+#define IMATHE 421
+#define DMATHB 422
+#define DMATHE 423
+#define Bfile 424
+#define Efile 425
+#define EQNO 426
+#define LEQNO 427
+#define REQNO 428
+#define BEqNum 429
+#define EEqNum 430
+#define BFoot 431
+#define EFoot 432
+#define BHead 433
+#define EHead 434
+#define BPage 435
+#define EPage 436
+#define ALIGN 437
+#define BMTABLE 438
+#define EMTABLE 439
+#define BARRAY 440
+#define EARRAY 441
+#define BEqnArray 442
+#define EEqnArray 443
+#define BAligned 444
+#define EAligned 445
+#define BAlign 446
+#define EAlign 447
+#define BEQALIGN 448
+#define EEQALIGN 449
+#define BSplit 450
+#define ESplit 451
+#define BSP 452
+#define ESP 453
+#define BPower 454
+#define Power 455
+#define EPower 456
+#define BSB 457
+#define ESB 458
+#define SBCHAR 459
+#define LT 460
+#define GT 461
+#define NEQ 462
+#define ARCCOS 463
+#define ARCSIN 464
+#define ARCTAN 465
+#define ARG 466
+#define COS 467
+#define COSH 468
+#define COT 469
+#define COTH 470
+#define CSC 471
+#define DEG 472
+#define DET 473
+#define DIM 474
+#define EXP 475
+#define GCD 476
+#define HOM 477
+#define INF 478
+#define KER 479
+#define LG 480
+#define LIM 481
+#define LIMINF 482
+#define LIMSUP 483
+#define LN 484
+#define LOG 485
+#define MAX 486
+#define MIN 487
+#define PR 488
+#define SEC 489
+#define SIN 490
+#define SINH 491
+#define SUP 492
+#define TAN 493
+#define TANH 494
+#define CDOTS 495
+#define DDOTS 496
+#define LDOTS 497
+#define VDOTS 498
+#define BFRAC 499
+#define FRACN 500
+#define FRACD 501
+#define EFRAC 502
+#define OVER 503
+#define CHOOSE 504
+#define ATOP 505
+#define BBUILDREL 506
+#define BUILDREL 507
+#define EBUILDREL 508
+#define MAPSTO 509
+#define LMAPSTO 510
+#define MODELS 511
+#define HLARROW 512
+#define HRARROW 513
+#define lLARROW 514
+#define LLARROW 515
+#define lRARROW 516
+#define LRARROW 517
+#define lLRARROW 518
+#define LLRARROW 519
+#define BOWTIE 520
+#define BOVERLARROW 521
+#define EOVERLARROW 522
+#define BOVERRARROW 523
+#define EOVERRARROW 524
+#define BUNDERLARROW 525
+#define EUNDERLARROW 526
+#define BUNDERRARROW 527
+#define EUNDERRARROW 528
+#define BOVERBRACE 529
+#define EOVERBRACE 530
+#define BUNDERBRACE 531
+#define EUNDERBRACE 532
+#define BWIDEHAT 533
+#define EWIDEHAT 534
+#define BWIDETILDE 535
+#define EWIDETILDE 536
+#define BDOT 537
+#define EDOT 538
+#define BOVERLINE 539
+#define EOVERLINE 540
+#define BUNDERLINE 541
+#define EUNDERLINE 542
+#define BMO 543
+#define EMO 544
+#define BSQRT 545
+#define SQRT 546
+#define ESQRT 547
+#define BROOT 548
+#define ROOT 549
+#define EROOT 550
+#define BRoot 551
+#define Root 552
+#define ERoot 553
+#define BSqrt 554
+#define ESqrt 555
+#define Bfunc 556
+#define Bfarg 557
+#define Efarg 558
+#define Efunc 559
+#define BInterval 560
+#define Interval 561
+#define EInterval 562
+#define BCompose 563
+#define Compose 564
+#define ECompose 565
+#define BInverse 566
+#define Inverse 567
+#define EInverse 568
+#define Ident 569
+#define BDomain 570
+#define EDomain 571
+#define BCodomain 572
+#define ECodomain 573
+#define BImage 574
+#define EImage 575
+#define BAmsCases 576
+#define EAmsCases 577
+#define BCases 578
+#define ECases 579
+#define BCasesRow 580
+#define ECasesRow 581
+#define BBra 582
+#define EBra 583
+#define BKet 584
+#define EKet 585
+#define NOTIN 586
+#define BPlus 587
+#define Plus 588
+#define EPlus 589
+#define BMinus 590
+#define Minus 591
+#define EMinus 592
+#define BTimes 593
+#define Times 594
+#define ETimes 595
+#define BQuotient 596
+#define Quotient 597
+#define EQuotient 598
+#define BFactorial 599
+#define Factorial 600
+#define EFactorial 601
+#define BFrac 602
+#define Fracn 603
+#define Fracd 604
+#define EFrac 605
+#define BMaxl 606
+#define BMaxc 607
+#define EMaxl 608
+#define EMaxc 609
+#define BVar 610
+#define EVar 611
+#define BCond 612
+#define ECond 613
+#define BExpr 614
+#define EExpr 615
+#define BMinl 616
+#define BMinc 617
+#define EMinl 618
+#define EMinc 619
+#define BRem 620
+#define Rem 621
+#define ERem 622
+#define REM 623
+#define BPMOD 624
+#define EPMOD 625
+#define BGcd 626
+#define EGcd 627
+#define BLcm 628
+#define ELcm 629
+#define LCM 630
+#define BRe 631
+#define ERe 632
+#define BIm 633
+#define EIm 634
+#define AND 635
+#define BLand 636
+#define Land 637
+#define ELand 638
+#define OR 639
+#define BLor 640
+#define Lor 641
+#define ELor 642
+#define XOR 643
+#define BXor 644
+#define Xor 645
+#define EXor 646
+#define BNot 647
+#define ENot 648
+#define BImplies 649
+#define Implies 650
+#define EImplies 651
+#define BForall 652
+#define EForall 653
+#define BAssert 654
+#define EAssert 655
+#define BExists 656
+#define EExists 657
+#define Babs 658
+#define Eabs 659
+#define Bconjugate 660
+#define Econjugate 661
+#define BArg 662
+#define EArg 663
+#define Bfloor 664
+#define Efloor 665
+#define Bceil 666
+#define Eceil 667
+#define BFactor 668
+#define Factor 669
+#define EFactor 670
+#define BEqual 671
+#define Equal 672
+#define EEqual 673
+#define BNequal 674
+#define Nequal 675
+#define ENequal 676
+#define BLequal 677
+#define Lequal 678
+#define ELequal 679
+#define BGequal 680
+#define Gequal 681
+#define EGequal 682
+#define BEquiv 683
+#define Equiv 684
+#define EEquiv 685
+#define BApprox 686
+#define Approx 687
+#define EApprox 688
+#define BGthan 689
+#define Gthan 690
+#define EGthan 691
+#define BLthan 692
+#define Lthan 693
+#define ELthan 694
+#define BInt 695
+#define EInt 696
+#define BIntll 697
+#define EIntll 698
+#define BIntul 699
+#define EIntul 700
+#define BIntarg 701
+#define EIntarg 702
+#define BIntbe 703
+#define EIntbe 704
+#define BDiff 705
+#define EDiff 706
+#define BDiffbe 707
+#define EDiffbe 708
+#define BDiffdeg 709
+#define EDiffdeg 710
+#define BDiffarg 711
+#define EDiffarg 712
+#define BDivs 713
+#define BDivt 714
+#define EDiv 715
+#define BGradt 716
+#define BGrads 717
+#define EGrad 718
+#define BCurlt 719
+#define BCurls 720
+#define ECurl 721
+#define BLaplacian 722
+#define ELaplacian 723
+#define BSum 724
+#define ESum 725
+#define BSumll 726
+#define ESumll 727
+#define BSumul 728
+#define ESumul 729
+#define BSumarg 730
+#define ESumarg 731
+#define BProd 732
+#define EProd 733
+#define BProdll 734
+#define EProdll 735
+#define BProdul 736
+#define EProdul 737
+#define BProdarg 738
+#define EProdarg 739
+#define BLimit 740
+#define ELimit 741
+#define BLimitarg 742
+#define ELimitarg 743
+#define BTendsto 744
+#define Tendsto 745
+#define ETendsto 746
+#define BSetl 747
+#define ESetl 748
+#define BSetc 749
+#define ESetc 750
+#define BSubset 751
+#define Subset 752
+#define ESubset 753
+#define BSubseteq 754
+#define Subseteq 755
+#define ESubseteq 756
+#define BNotsubset 757
+#define Notsubset 758
+#define ENotsubset 759
+#define BNotsubseteq 760
+#define Notsubseteq 761
+#define ENotsubseteq 762
+#define BListl 763
+#define EListl 764
+#define BListcarg 765
+#define EListcarg 766
+#define BListc 767
+#define EListc 768
+#define BUnion 769
+#define Union 770
+#define EUnion 771
+#define BIntersect 772
+#define Intersect 773
+#define EIntersect 774
+#define BIn 775
+#define In 776
+#define EIn 777
+#define BNotin 778
+#define Notin 779
+#define ENotin 780
+#define BSetdiff 781
+#define Setdiff 782
+#define ESetdiff 783
+#define BCard 784
+#define ECard 785
+#define BCartesian 786
+#define Cartesian 787
+#define ECartesian 788
+#define BSin 789
+#define ESin 790
+#define BCos 791
+#define ECos 792
+#define BTan 793
+#define ETan 794
+#define BSec 795
+#define ESec 796
+#define BCsc 797
+#define ECsc 798
+#define BCot 799
+#define ECot 800
+#define BSinh 801
+#define ESinh 802
+#define BCosh 803
+#define ECosh 804
+#define BTanh 805
+#define ETanh 806
+#define BSech 807
+#define Sech 808
+#define ESech 809
+#define BCsch 810
+#define Csch 811
+#define ECsch 812
+#define BCoth 813
+#define ECoth 814
+#define BArccos 815
+#define EArccos 816
+#define BArccosh 817
+#define Arccosh 818
+#define EArccosh 819
+#define BArcsin 820
+#define EArcsin 821
+#define BArctan 822
+#define EArctan 823
+#define BArccot 824
+#define Arccot 825
+#define EArccot 826
+#define BArccoth 827
+#define Arccoth 828
+#define EArccoth 829
+#define BArccsc 830
+#define Arccsc 831
+#define EArccsc 832
+#define BArccsch 833
+#define Arccsch 834
+#define EArccsch 835
+#define BArcsec 836
+#define Arcsec 837
+#define EArcsec 838
+#define BArcsech 839
+#define Arcsech 840
+#define EArcsech 841
+#define BArcsinh 842
+#define Arcsinh 843
+#define EArcsinh 844
+#define BArctanh 845
+#define Arctanh 846
+#define EArctanh 847
+#define BLn 848
+#define ELn 849
+#define BLog 850
+#define ELog 851
+#define BLg 852
+#define ELg 853
+#define BExp 854
+#define EExp 855
+#define BMean 856
+#define EMean 857
+#define BSDev 858
+#define ESDev 859
+#define BVariance 860
+#define Variance 861
+#define EVariance 862
+#define BMedian 863
+#define Median 864
+#define EMedian 865
+#define BMode 866
+#define Mode 867
+#define EMode 868
+#define BMoment 869
+#define EMoment 870
+#define BMomentDeg 871
+#define EMomentDeg 872
+#define BMomentArg 873
+#define EMomentArg 874
+#define BMomenta 875
+#define EMomenta 876
+#define BMabout 877
+#define EMabout 878
+#define BMATRIX 879
+#define EMATRIX 880
+#define BVector 881
+#define EVector 882
+#define BMatrix 883
+#define EMatrix 884
+#define BTranspose 885
+#define ETranspose 886
+#define BDet 887
+#define EDet 888
+#define BSelector 889
+#define SelectorMatrix 890
+#define ESelector 891
+#define BVectorProduct 892
+#define VectorProduct 893
+#define EVectorProduct 894
+#define BScalarProduct 895
+#define ScalarProduct 896
+#define EScalarProduct 897
+#define BOuterProduct 898
+#define OuterProduct 899
+#define EOuterProduct 900
+#define Integers 901
+#define Naturals 902
+#define Rationals 903
+#define Reals 904
+#define Complexes 905
+#define Primes 906
+#define EPrimes 907
+#define ExponentialE 908
+#define ImaginaryI 909
+#define NotANumber 910
+#define True 911
+#define False 912
+#define Emptyset 913
+#define PiCst 914
+#define EulerGamma 915
+#define Infty 916
+#define HBar 917
+#define Trace 918
+
+/* Value type.  */
+#if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
+typedef int YYSTYPE;
+# define YYSTYPE_IS_TRIVIAL 1
+# define YYSTYPE_IS_DECLARED 1
+#endif
+
+
+extern YYSTYPE yylval;
+
+int yyparse (void);
+
+#endif /* !YY_YY_Y_TAB_H_INCLUDED  */
