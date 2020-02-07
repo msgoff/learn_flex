@@ -13,4 +13,6 @@ extern int yylval;
 [{] {ECHO;return LEFTBRACE ; } 
 .	return yytext[0];
 
+-?(([0-9]+)|([0-9]*\.[0-9]+)([eE][-+]?[0-9]+)?) {ECHO; return DECIMAL}
+
 %%
