@@ -1,3 +1,6 @@
 [submodule "utils/sds"]
 	path = utils/sds
 	url = https://github.com/antirez/sds
+[submodule "utils/uthash"]
+	path = utils/uthash
+	url = https://github.com/troydhanson/uthash.git
