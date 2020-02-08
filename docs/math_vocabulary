@@ -2,41 +2,49 @@ Absolute complement
 Acyclic
 Adjacency matrix
 Adjacent vertices
+function
 Antisymmetric
-Arguing from examples
+relation
 Argument
 Arithmetic sequence
 Axiom
 Barber paradox
-Begging the question
 Biconditional proposition
 Bijective function
+binary
 Binary relation
 Binary search tree
 Binary tree
-Binomial coeﬃcient
 Binomial Theorem
 Bipartite graph
 Boolean algebra
 Boolean expression
 Boolean variable
+bound
 Branch
+bridge
 Cardinality
 Cartesian product
 Ceiling function
 Characteristic equation
 Circuit
 Circular proof
+clique
 Closed path
+code extension of a language
 Combination
+Compactness Theorem
 Comparable
-Complement
+complement
 Complete bipartite graph
 Complete graph
+Completeness Theorem
 Component
 Composite number
 Composition of relations
 Compound propositions
+computable k-place
+computation
 Conditional connective
 Conditional proposition
 Congruent modulo n
@@ -45,17 +53,28 @@ Conjunctive addition
 Conjunctive simpliﬁcation
 Connected components
 Connected graph
+connectives
+consistent
+constant
+constant function
 Constructive proof
 Contradiction
 Contrapositive
 Converse
 Corollary
+countable
 Counterexample
+cross product
 Cycle
+decision problem
 Decision tree
+Decode
+deduction
+Deduction Theorem
 Degree of a vertex
 Descendant
 Descriptive form
+Diff
 Digraph
 Directed edge
 Directed graph
@@ -68,10 +87,17 @@ Disjunctive syllogism
 Divisible
 Division Algorithm
 Domain
+domain (of a function)
 Domain of discourse
 Edges
+Element
+elementary
+elementary equivalence
 Empty set
+Equal
+equality
 Equal sets
+equivalence
 Equivalence classes
 Equivalence relation
 Equivalent circuits
@@ -81,11 +107,19 @@ Euler circuit
 Euler path
 Exclusive or
 Existential quantiﬁer
+extended
+extension of
+Fact
 Factorial
 Fibonacci
 Finite set
+first-order
+first-order number theory
 Floor function
 Forest
+formal
+Formula
+Formulas
 Free variable
 Full binary tree
 Function
@@ -93,40 +127,79 @@ Fundamental Theorem of Arithmetic
 Generating rule
 Geometric progression
 Geometric sequence
+Gödel
+Gödel’s First
+Gödel’s Second
 Greatest common divisor
+Halting Problem
 Handshaking Theorem
 Hasse diagram
-Height
 Hypothesis
+identity function
+if and only if
+implies
 Incidence matrix
+Incompleteness Theorem
+inconsistent
 In-degree
+independent set
 Indirect proof method
 Inference
+inference rule
+infinite
+Infinite
+Infinite Ramsey’s Theorem
 Inﬁnite set
+infinitesimal
 Initial condition
+initial function
 Injective
+input tape
 Intermediate Value Theorem
+intersection
 Intersection of sets
 Invalid argument
 Inverse
 Inverse relation
 Isolated vertex
+isomorphism of structures
+IsPrime
 Iteration
+John
+k-place
+k-place function
+k-place relation
+language
 Leaf
 Least element
 Left child
 Lemma
+Length
 Level of a vertex
+limericks
 Logic
+Logical
+logical axiom
 Logic gate
+logic primitive recursion
 Loop
+machine
+marked cell
+mathematical
 Mathematical induction
+mathematical logic
 Mathematical system
+maximally
+maximally consistent
 Method of exhaustion
 Modus ponens
 Modus Tollens
+Mult
+multiple
 Multiplication rule of counting
 Naive set theory
+natural
+natural deductive
 Natural numbers
 Negation
 Nonconstructive proof
@@ -135,20 +208,27 @@ One-to-one correspondence
 Onto function
 Ordered pair
 Out-degree
+output tape
 Paradox
 Parallel edges
 Parent
+parentheses
+partial
 Partial order
 Partition of sets
-Path of length n
 Permutation
 Pierce arrow
 Pigeonhole principle
+Power
 Power set
+predicate
 Predicate
 Premises
 Preorder traversal
+Press
+Prime
 Prime number
+primitive recursive
 Projection function
 Proof
 Proof by cases
@@ -156,32 +236,72 @@ Proof by contradiction
 Proof by contrapositive
 Proper subset
 Proposition
+propositional
 Propositional functions
 Propositional variables
+punctuation
+quantifier
 Quantiﬁer
+Ramsey number
+Ramsey’s Theorem
 Range
+range of a function
 Recurrence
+recursion primitive
+recursive
+recursively enumerable
+recursive non-logical
 Reﬂexive
+regular function
 Regular graph
+relation
 Relative complement
 Relatively prime
 Right child
 Rooted tree
 Rule of contradiction
+rule of inference
+satisfiable
+satisfies
+scanned cell
+scanner
+scope of a quantifier
+score values
+Second Incompleteness Theorem
+sentence
+Sentence
+sentential
+sentential logic
+separate
+sequence of tape positions Turing machine
 Set
 Set-builder form
+set of formulas
+set theory
 Siblings
 Simple graph
 Simple path
+Soundness Theorem
 Spanning tree
+Springer-Verlag
+state
+Step
+StepM 
+structure
+subformula
+subgraph
 Subgraph
+Subseq
+subset
 Subset
+substitutable
 Subtree
 Surjective
 Symbolic connectives
 Symmetric
 Symmetric diﬀerence
 Tabular form
+TapePosSeq
 Tautology
 Theorem
 Total degree
@@ -194,17 +314,32 @@ Trivial proof
 Truth set
 Truth table
 Truth Value
+Turing
+Turing computable
+Turing machine
+unbounded
+unbounded minimalization
+unbounded minimalization of
+uncountable
+Undefinability Theorem
 Undirected graph
 Unioin of sets
+union
 Unique Factorization Theorem
+unique readability
+Unique Readability Theorem
+universal
 universal conditional proposition
 Universal quantiﬁer
 Universal set
 Vacuously true
 Vacuous proof
 Valid argument
+variable
 Venn diagrams
+vertex
 Vertex
 Vertices of a graph
 Well order
 Well-Ordering Principle
+zero function
