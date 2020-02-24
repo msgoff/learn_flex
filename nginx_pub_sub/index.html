@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+    <head>
+    </head>
+    <body>
+	    <p id='asdf'>
+	    
+	    </p>
+
+
+
+<input type="text" id="txtSearch" onkeypress="searchKeyPress(event);" />
+
+    </body>
+
+	<script>
+
+		// Create WebSocket connection.
+const socket_pub = new WebSocket('ws://localhost:80/pub?id=asdf');
+const socket_pub_1 = new WebSocket('ws://localhost:80/redis_pub/hello');
+const socket_sub = new WebSocket('ws://localhost:80/sub?id=1');
+
+// Connection opened
+socket_pub.addEventListener('open', function (event) {
+    socket_pub.send('Hello Server!');
+});
+
+
+function searchKeyPress(e)
+{
+    // look for window.event in case event isn't passed in
+    e = e || window.event;
+    if (e.keyCode == 13)
+    {
+        var input_text = document.getElementById('txtSearch').value;
+        console.log(input_text);
+	socket_pub_1.send(input_text);
+    }
+    return true;
+}
+
+
+// Listen for messages
+socket_sub.addEventListener('message', function (event) {
+    //console.log('Message from server ', event.data);
+	var data = JSON.parse(event.data);
+	//console.log(test.length());
+	//for (i=0;i<test.length;i++){
+		
+	//html_element = html_element+JSON.stringify(test.name)+JSON.stringify(test.username)+JSON.stringify(test.memory_percent);
+	//}
+	document.getElementById("asdf").innerHTML =data.asdf ;
+
+});
+	</script>
+
+
+</html>
