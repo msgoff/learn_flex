@@ -1,3 +1,6 @@
+read_file:
+	gcc read_file.c test_read_file.c
+
 python_3_7:
 	rm -rf call_python
 	rm -rf /tmp/some_file
