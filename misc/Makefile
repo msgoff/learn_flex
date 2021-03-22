@@ -1,3 +1,7 @@
+1:
+	flex -Cf 1.l
+	gcc -lfl lex.yy.c ../utils/sds_gcc_10/sds.c -I ../utils/sds_gcc_10/
+
 
 read_file:
 	gcc read_file.c test_read_file.c

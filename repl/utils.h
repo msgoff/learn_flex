@@ -11,14 +11,3 @@ void dot_file(char* file_name,char *r_w_a,char *text){
   fclose(f);
 }
 
-void trim_ws(char* value){
-  int value_size = sizeof(value);
-  printf("%d",value_size);
-}
-
-void factor(char *integer){
-  int x = 0;
-  x = atoi(integer);
-  printf("%s %d",integer,x);
-
-}

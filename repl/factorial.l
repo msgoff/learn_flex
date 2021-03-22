@@ -3,16 +3,16 @@
 #include "sds.h"
 #include "utils.h"
 %}
-integer [0-9]+
+integer [0]|[0]?[1-9]+
 factorial factorial
-space_maybe [ \t]*
-
+WS [[:blank:]]
 
 %%
-{factorial}{space_maybe}{integer}    {
+{factorial}{WS}{integer}    {
   sds match=sdsnew(yytext);
   sdsrange(match,8,-1);
   sdstrim(match," ");
-  factor(match);}
+  printf("%s",match);  
+}
 . ;
 %%
