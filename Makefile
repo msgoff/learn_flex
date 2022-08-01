@@ -1,3 +1,5 @@
-find:
-	flex -Cf -8 find.l
-	gcc -lfl -O3 lex.yy.c
+all:
+	flex -CFa scanner.l
+	gcc -O3 lex.S1_.c main.c -lfl -o mmap_flex.out 
+
+
