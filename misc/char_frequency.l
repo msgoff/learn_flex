@@ -44,7 +44,7 @@ int main()
 	yylex();
 	printf("a:%.2f\tb:%.3f\tc:%.3f\td:%.3f\n",1.0*a/total_count,1.0*b/total_count,1.0*c/total_count,1.0*d/total_count);
 	printf("e:%.3f\tf:%.3f\tg:%.3f\th:%.3f\n",1.0*e/total_count,1.0*f/total_count,1.0*g/total_count,1.0*h/total_count);
-	printf("i:%.3f\tj:%.3f\tk:%.3f\tl:%.3f\n",1.0*i/total_count,1.0*j/total_count,1.0*k/total_count,1.0*l)/total_count;
+	printf("i:%.3f\tj:%.3f\tk:%.3f\tl:%.3f\n",1.0*i/total_count,1.0*j/total_count,1.0*k/total_count,1.0*l/total_count);
 	printf("m:%.3f\tn:%.3f\to:%.3f\tp:%.3f\n",1.0*m/total_count,1.0*n/total_count,1.0*o/total_count,1.0*p/total_count);
 	printf("q:%.3f\tr:%.3f\ts:%.3f\tt:%.3f\n",1.0*q/total_count,1.0*r/total_count,1.0*s/total_count,1.0*t/total_count);
 	printf("u:%.3f\tv:%.3f\tw:%.3f\tx:%.3f\n",1.0*u/total_count,1.0*v/total_count,1.0*w/total_count,1.0*x/total_count);
