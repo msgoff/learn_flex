@@ -1,2 +1,4 @@
 # learn_flex
-git clone --recurse-submodules   
+
+make  install_flex  
+make  base  
