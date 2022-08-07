@@ -4,7 +4,7 @@ int count;
 char filename[256];
 char results_filename[256];
 int print_count;
-
+int prefix_comment;
 %}
 %{
 int balanced;
@@ -15,8 +15,14 @@ int print_count;
 
 %}
 
-%x SOURCE
+%x SOURCE CELL_TYPE
 %%
+
+^[ ]+\"cell_type\"":"[ ]+ 	{ BEGIN(CELL_TYPE); }
+<CELL_TYPE>\"markdown\" 	{ prefix_comment=1; BEGIN(0); }
+<CELL_TYPE>\"code\" 		{ prefix_comment=0; BEGIN(0); }
+
+
 ^[ ]+\"source\"":"[ ]+"["  {
 	yymore();
 	balanced--;
@@ -36,7 +42,16 @@ int print_count;
 }
 <SOURCE>^[ ]+\"\\n\"	;
 <SOURCE>. { yymore(); }
-<SOURCE>\n { yymore(); }
+<SOURCE>\n {
+	if(prefix_comment==1){ 
+	char tmp[yyleng+2]; 
+	memset(tmp,'\0',yyleng+2); strncpy(tmp,yytext,yyleng-1); strcat(tmp,"\n#"); 
+	printf("%s\n",tmp);
+	fprintf(yyout,tmp);
+} else {
+	yymore();
+}
+}
 
 .	;
 \n	;
