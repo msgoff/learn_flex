@@ -2,4 +2,4 @@ simple lexer to extract source from python ipynb notebooks
 run Make
 ./source.out some_file.ipynb
 which will generte a source.csv in the local directory
-bash post-processing.sh should generate python code with markdown
+bash post-processing.sh source.csv should generate python code with markdown
