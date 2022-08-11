@@ -5,7 +5,8 @@
 #include <string.h>
 #include <regex.h>
 #define MAX_FILE_SIZE 10000
-void resub(char *buffer, char *pattern,char* replacement); 
+#include "globals.h"
+
 char results[1024];
 /*	
 *	memset(results,'\0',1024);

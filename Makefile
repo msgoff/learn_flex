@@ -10,6 +10,6 @@ install_sds:
 
 base:
 	flex -CFa scanner.l
-	gcc -O3 lex.S1_.c main.c -lfl -o mmap_flex.out 
-
+	gcc -O3 lex.S1_.c basic_resub.c main.c -lfl -o mmap_flex.out 
+	./mmap_flex.out test
 

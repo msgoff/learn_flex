@@ -1,6 +1,7 @@
 %{
 #include <stdio.h>
 #include <stdlib.h>
+#include "globals.h"
 int line_start;
 int line_stop;
 %}
@@ -12,7 +13,11 @@ int line_stop;
 
 %x line
 %%
-[0-9]+/":"	{ line_start=atoi(yytext); BEGIN(line); }
+[0-9]+/":"	{ 
+	
+	resub(yytext,"10","20"); //test case convert 10 to 20
+	printf("%s\n",results);
+	line_start=atoi(yytext); BEGIN(line); }
 <line>":"	;
 <line>[ ]+	;
 <line>\n	
