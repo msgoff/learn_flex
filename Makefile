@@ -2,7 +2,7 @@ install_flex:
 	sudo apt install texinfo
 	sudo apt install help2man
 	git clone https://github.com/westes/flex
-	cd flex && bash autogen.sh && ./configure && make && make install && sudo cp src/flex /usr/bin/
+	cd flex && bash autogen.sh && ./configure && make && sudo make install && sudo cp src/flex /usr/bin/
 
 install_sds:
 	git clone https://github.com/antirez/sds
