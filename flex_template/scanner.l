@@ -24,7 +24,7 @@ struct PRINT {
 	"INTEGER",true,
 	"LBRACE",true,
 	"LBRACK",true,
-	"LOWER",false,
+	"LOWER",true,
 	"LPAREN",true,
 	"LT",true,
 	"MONTH",true,
@@ -45,7 +45,7 @@ struct PRINT {
 
 bool search_print_struct(char* state){
 	for(int i=0;i<sizeof(data)/sizeof(data[0]);i++){
-		if(!strcmp(state,data[i].name)){
+		if(strcmp(state,data[i].name)==0){
 			return data[i].print_match;
 		}
 	}
