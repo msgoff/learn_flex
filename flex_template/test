@@ -1,2 +1,12 @@
-10:<page>
-12:</page>
+:
+single_input
+ : NEWLINE
+ | simple_stmt
+ | compound_stmt NEWLINE
+ ;
+
+/// file_input: (NEWLINE | stmt)* ENDMARKER
+file_input
+ : ( NEWLINE | stmt )* EOF
+ ;
+

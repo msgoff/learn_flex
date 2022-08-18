@@ -22,12 +22,10 @@ int main(int argc, char **argv) {
   if (buffer != (void *)-1) {
     yybuffer buff1;                  // create a new buffer
     buff1 = S1__scan_string(buffer); // read string into buff1
-
     S1__switch_to_buffer(buff1); // switch to the new buffer
     S1_lex();                    // run the lexer defined in scanner.l
     S1__delete_buffer(buff1);    // delete the buffer
     munmap(buffer, s.st_size);   // unmap the file from memory
   }
   close(fd); // close file descriptor.
-  return 0;
 }
