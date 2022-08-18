@@ -266,6 +266,13 @@ WS	[[:blank:]]
 
 
 
+{WS}+   {
+            if(yyleng==1){
+                    printf("WS\n");
+            } else {
+                    printf("WS{%d}\n",yyleng);
+            }
+    }
 
 {XDIGIT}+   {
             if(yyleng==1){
