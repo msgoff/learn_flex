@@ -1,0 +1,36 @@
+Common character classes
+
+[:alnum:] -> [0-9a-zA-Z]
+[:alpha:] -> [a-zA-Z]
+[:blank:] -> [ \t\r] "better definitions exist"
+[:cntrl:]
+[:digit:] -> [0-9]
+[:graph:]
+[:lower:] -> [a-z]
+[:upper:] -> [A-Z]
+[:print:] 
+[:punct:]
+[:space:]
+[:xdigit:] -> HEXIDECIMAL
+
+INT ("+"|"-")?(0|[1-9][0-9]*)
+
+# nl and ws are usually grouped and skipped, although commonly contain useful information about the structure
+
+NL	\n   
+
+LPAREN
+RPAREN
+LBRACE
+RBRACE
+COLON
+LBRACK
+RBRACK
+GT
+LT
+
+<<
+>>
+$
+.
+LABEL or ID [a-zA-Z0-9_]
