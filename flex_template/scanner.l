@@ -10,22 +10,25 @@ struct PRINT {
 	char * name;
 	bool   print_match;	
 }data[]={
-	"COLON",true,
+	//false will show the RLE for the match
+	//true  will show the actual match 
+	"COLON",false,
 	"COMMA",true,
 	"COMMENT",true,
 	"DIGIT",true,
 	"DOLLAR",true,
 	"DOT",true,
 	"ESCAPESEQUENCE",true,
+	"FSLASH",false,
 	"GT",true,
 	"INTEGER",true,
 	"LBRACE",true,
 	"LBRACK",true,
-	"LOWER",true,
+	"LOWER",false,
 	"LPAREN",true,
 	"LT",true,
 	"MONTH",true,
-	"NL",true,
+	"NL",false,
 	"OR",true,
 	"POWER",true,
 	"RBRACE",true,
@@ -36,7 +39,7 @@ struct PRINT {
 	"TIMEZONE",true,
 	"UNDERSCORE",true,
 	"UPPER",true,
-	"WS",true,
+	"WS",false,
 	"XDIGIT",true,
 };
 
@@ -75,6 +78,7 @@ RBRACE "}"
 COLON  ":"
 LBRACK "]"
 RBRACK "]"
+FSLASH "/"
 GT ">"
 LT "<"
 POWER "^"
@@ -345,13 +349,13 @@ WS	[[:blank:]]
 		if(search_print_struct("NL")){
 			printf("%s",yytext);	
         } else { 
-			printf("{NL}");
+			printf("{NL}\n");
 		}
 	} else {
 		if(search_print_struct("NL")){
 			printf("%s",yytext);	
 		} else {	
-			printf("{NL}{%d}",yyleng);
+			printf("{NL}{%d}\n",yyleng);
 		}
 	}
 }
@@ -516,6 +520,21 @@ WS	[[:blank:]]
 	}
 }
     
+{FSLASH}+	{
+	if(yyleng==1){
+		if(search_print_struct("FSLASH")){
+			printf("%s",yytext);	
+        } else { 
+			printf("{FSLASH}");
+		}
+	} else {
+		if(search_print_struct("FSLASH")){
+			printf("%s",yytext);	
+		} else {	
+			printf("{FSLASH}{%d}",yyleng);
+		}
+	}
+}
 
 {XDIGIT}+	{
 	if(yyleng==1){
