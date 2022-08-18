@@ -42,11 +42,20 @@ words = [x.strip() for x in words.splitlines()]
 
 for WORD in words:
     code = f"""
-    {{{WORD}}}+   {{
-            if(yyleng==1){{
-                    printf("{WORD}\\n");
-            }} else {{
-                    printf("{WORD}{{%d}}\\n",yyleng);
-            }}
-    }}"""
+{{{WORD}}}+	{{
+	if(yyleng==1){{
+		if(search_print_struct("WORD")){{
+			printf("%s",yytext);	
+        }} else {{ 
+			printf("{{{WORD}}}");
+		}}
+	}} else {{
+		if(search_print_struct("WORD")){{
+			printf("%s",yytext);	
+		}} else {{	
+			printf("{{{WORD}}}{{%d}}",yyleng);
+		}}
+	}}
+}}
+    """
     print(code)

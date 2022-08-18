@@ -1,10 +1,52 @@
 %{
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include "globals.h"
 int line_start;
 int line_stop;
 int debug;
+struct PRINT {
+	char * name;
+	bool   print_match;	
+}data[]={
+	"COLON",true,
+	"COMMA",true,
+	"COMMENT",true,
+	"DIGIT",true,
+	"DOLLAR",true,
+	"DOT",true,
+	"ESCAPESEQUENCE",true,
+	"GT",true,
+	"INTEGER",true,
+	"LBRACE",true,
+	"LBRACK",true,
+	"LOWER",true,
+	"LPAREN",true,
+	"LT",true,
+	"MONTH",true,
+	"NL",true,
+	"OR",true,
+	"POWER",true,
+	"RBRACE",true,
+	"RBRACK",true,
+	"RPAREN",true,
+	"SEMICOLON",true,
+	"STAR",true,
+	"TIMEZONE",true,
+	"UNDERSCORE",true,
+	"UPPER",true,
+	"WS",true,
+	"XDIGIT",true,
+};
+
+bool search_print_struct(char* state){
+	for(int i=0;i<sizeof(data)/sizeof(data[0]);i++){
+		if(!strcmp(state,data[i].name)){
+			return data[i].print_match;
+		}
+	}
+}
 %}
 
 %option header="base_flex.h"
@@ -22,7 +64,6 @@ LOWER	[[:lower:]]
 UPPER	[[:upper:]] 
 PRINT	[[:print:]] 
 PUNCT	[[:punct:]]
-SPACE	[[:space:]]
 XDIGIT	[[:xdigit:]]
 
 INTEGER ("+"|"-")?(0|[1-9][0-9]*)
@@ -54,208 +95,448 @@ WS	[[:blank:]]
 
 %%
 
+
 {COLON}+	{
 	if(yyleng==1){
-		printf("{COLON}");
+		if(search_print_struct("COLON")){
+			printf("%s",yytext);	
+        } else { 
+			printf("{COLON}");
+		}
 	} else {
-		printf("{COLON}{%d}",yyleng);
+		if(search_print_struct("COLON")){
+			printf("%s",yytext);	
+		} else {	
+			printf("{COLON}{%d}",yyleng);
+		}
 	}
 }
+    
 
+{COMMA}+	{
+	if(yyleng==1){
+		if(search_print_struct("COMMA")){
+			printf("%s",yytext);	
+        } else { 
+			printf("{COMMA}");
+		}
+	} else {
+		if(search_print_struct("COMMA")){
+			printf("%s",yytext);	
+		} else {	
+			printf("{COMMA}{%d}",yyleng);
+		}
+	}
+}
+    
 
-{UPPER}+	{
-	if(yyleng==1){
-		printf("{UPPER}");
-	} else {
-		printf("{UPPER}{%d}",yyleng);
-	}
-}
-
-{LOWER}+	{
-	if(yyleng==1){
-		printf("{LOWER}");
-	} else {
-		printf("{LOWER}{%d}",yyleng);
-	}
-}
-{OR}+	{
-	if(yyleng==1){
-		printf("{OR}");
-	} else {
-		printf("{OR}{%d}",yyleng);
-	}
-}
-
-{WS}+	{
-	if(yyleng==1){
-		printf("{WS}");
-	} else {
-		printf("{WS}{%d}",yyleng);
-	}
-}
-
-{SEMICOLON}+	{
-	if(yyleng==1){
-		printf("{SEMICOLON}");
-	} else {
-		printf("{SEMICOLON}{%d}",yyleng);
-	}
-}
-{INTEGER}+	{
-	if(yyleng==1){
-		printf("{INTEGER}");
-	} else {
-		printf("{INTEGER}{%d}",yyleng);
-	}
-}
-
-{STAR}+	{
-	if(yyleng==1){
-		printf("{STAR}");
-	} else {
-		printf("{STAR}{%d}",yyleng);
-	}
-}
 {COMMENT}+	{
 	if(yyleng==1){
-		printf("{COMMENT}");
+		if(search_print_struct("COMMENT")){
+			printf("%s",yytext);	
+        } else { 
+			printf("{COMMENT}");
+		}
 	} else {
-		printf("{COMMENT}{%d}",yyleng);
+		if(search_print_struct("COMMENT")){
+			printf("%s",yytext);	
+		} else {	
+			printf("{COMMENT}{%d}",yyleng);
+		}
 	}
 }
+    
 
-{LPAREN}+	{
-	if(yyleng==1){
-		printf("{LPAREN}");
-	} else {
-		printf("{LPAREN}{%d}",yyleng);
-	}
-}
 
-{RPAREN}+	{
+{DIGIT}+	{
 	if(yyleng==1){
-		printf("{RPAREN}");
+		if(search_print_struct("DIGIT")){
+			printf("%s",yytext);	
+        } else { 
+			printf("{DIGIT}");
+		}
 	} else {
-		printf("{RPAREN}{%d}",yyleng);
+		if(search_print_struct("DIGIT")){
+			printf("%s",yytext);	
+		} else {	
+			printf("{DIGIT}{%d}",yyleng);
+		}
 	}
 }
+    
 
-{UNDERSCORE}+	{
+{DOLLAR}+	{
 	if(yyleng==1){
-		printf("{UNDERSCORE}");
+		if(search_print_struct("DOLLAR")){
+			printf("%s",yytext);	
+        } else { 
+			printf("{DOLLAR}");
+		}
 	} else {
-		printf("{UNDERSCORE}{%d}",yyleng);
+		if(search_print_struct("DOLLAR")){
+			printf("%s",yytext);	
+		} else {	
+			printf("{DOLLAR}{%d}",yyleng);
+		}
 	}
 }
+    
+
+{DOT}+	{
+	if(yyleng==1){
+		if(search_print_struct("DOT")){
+			printf("%s",yytext);	
+        } else { 
+			printf("{DOT}");
+		}
+	} else {
+		if(search_print_struct("DOT")){
+			printf("%s",yytext);	
+		} else {	
+			printf("{DOT}{%d}",yyleng);
+		}
+	}
+}
+    
+
+{ESCAPESEQUENCE}+	{
+	if(yyleng==1){
+		if(search_print_struct("ESCAPESEQUENCE")){
+			printf("%s",yytext);	
+        } else { 
+			printf("{ESCAPESEQUENCE}");
+		}
+	} else {
+		if(search_print_struct("ESCAPESEQUENCE")){
+			printf("%s",yytext);	
+		} else {	
+			printf("{ESCAPESEQUENCE}{%d}",yyleng);
+		}
+	}
+}
+    
+
+    
 
 {GT}+	{
 	if(yyleng==1){
-		printf("{GT}\n");
+		if(search_print_struct("GT")){
+			printf("%s",yytext);	
+        } else { 
+			printf("{GT}");
+		}
 	} else {
-		printf("{GT}{%d}\n",yyleng);
+		if(search_print_struct("GT")){
+			printf("%s",yytext);	
+		} else {	
+			printf("{GT}{%d}",yyleng);
+		}
 	}
 }
+    
+
+
+{INTEGER}+	{
+	if(yyleng==1){
+		if(search_print_struct("INTEGER")){
+			printf("%s",yytext);	
+        } else { 
+			printf("{INTEGER}");
+		}
+	} else {
+		if(search_print_struct("INTEGER")){
+			printf("%s",yytext);	
+		} else {	
+			printf("{INTEGER}{%d}",yyleng);
+		}
+	}
+}
+    
+
+{LBRACE}+	{
+	if(yyleng==1){
+		if(search_print_struct("LBRACE")){
+			printf("%s",yytext);	
+        } else { 
+			printf("{LBRACE}");
+		}
+	} else {
+		if(search_print_struct("LBRACE")){
+			printf("%s",yytext);	
+		} else {	
+			printf("{LBRACE}{%d}",yyleng);
+		}
+	}
+}
+    
+
+{LBRACK}+	{
+	if(yyleng==1){
+		if(search_print_struct("LT")){
+			printf("%s",yytext);	
+        } else { 
+			printf("{LBRACK}");
+		}
+	} else {
+		if(search_print_struct("LT")){
+			printf("%s",yytext);	
+		} else {	
+			printf("{LBRACK}{%d}",yyleng);
+		}
+	}
+}
+    
+
+{LOWER}+	{
+	if(yyleng==1){
+		if(search_print_struct("LOWER")){
+			printf("%s",yytext);	
+        } else { 
+			printf("{LOWER}");
+		}
+	} else {
+		if(search_print_struct("LOWER")){
+			printf("%s",yytext);	
+		} else {	
+			printf("{LOWER}{%d}",yyleng);
+		}
+	}
+}
+    
+
+{LPAREN}+	{
+	if(yyleng==1){
+		if(search_print_struct("LPAREN")){
+			printf("%s",yytext);	
+        } else { 
+			printf("{LPAREN}");
+		}
+	} else {
+		if(search_print_struct("LPAREN")){
+			printf("%s",yytext);	
+		} else {	
+			printf("{LPAREN}{%d}",yyleng);
+		}
+	}
+}
+    
+
 {LT}+	{
 	if(yyleng==1){
-		printf("{LT}\n");
+		if(search_print_struct("WORD")){
+			printf("%s",yytext);	
+        } else { 
+			printf("{LT}");
+		}
 	} else {
-		printf("{LT}{%d}\n",yyleng);
+		if(search_print_struct("WORD")){
+			printf("%s",yytext);	
+		} else {	
+			printf("{LT}{%d}",yyleng);
+		}
 	}
 }
+    
+
+    
 
 {NL}+	{
 	if(yyleng==1){
-		printf("{NL}\n");
+		if(search_print_struct("NL")){
+			printf("%s",yytext);	
+        } else { 
+			printf("{NL}");
+		}
 	} else {
-		printf("{NL}{%d}\n",yyleng);
+		if(search_print_struct("NL")){
+			printf("%s",yytext);	
+		} else {	
+			printf("{NL}{%d}",yyleng);
+		}
+	}
+}
+    
+
+{OR}+	{
+	if(yyleng==1){
+		if(search_print_struct("OR")){
+			printf("%s",yytext);	
+        } else { 
+			printf("{OR}");
+		}
+	} else {
+		if(search_print_struct("OR")){
+			printf("%s",yytext);	
+		} else {	
+			printf("{OR}{%d}",yyleng);
+		}
+	}
+}
+    
+
+{POWER}+	{
+	if(yyleng==1){
+		if(search_print_struct("POWER")){
+			printf("%s",yytext);	
+        } else { 
+			printf("{POWER}");
+		}
+	} else {
+		if(search_print_struct("POWER")){
+			printf("%s",yytext);	
+		} else {	
+			printf("{POWER}{%d}",yyleng);
+		}
+	}
+}
+    
+
+
+{RBRACE}+	{
+	if(yyleng==1){
+		if(search_print_struct("RBRACE")){
+			printf("%s",yytext);	
+        } else { 
+			printf("{RBRACE}");
+		}
+	} else {
+		if(search_print_struct("RBRACE")){
+			printf("%s",yytext);	
+		} else {	
+			printf("{RBRACE}{%d}",yyleng);
+		}
+	}
+}
+    
+
+    
+
+{RPAREN}+	{
+	if(yyleng==1){
+		if(search_print_struct("RPAREN")){
+			printf("%s",yytext);	
+        } else { 
+			printf("{RPAREN}");
+		}
+	} else {
+		if(search_print_struct("RPAREN")){
+			printf("%s",yytext);	
+		} else {	
+			printf("{RPAREN}{%d}",yyleng);
+		}
+	}
+}
+    
+
+{SEMICOLON}+	{
+	if(yyleng==1){
+		if(search_print_struct("SEMICOLON")){
+			printf("%s",yytext);	
+        } else { 
+			printf("{SEMICOLON}");
+		}
+	} else {
+		if(search_print_struct("SEMICOLON")){
+			printf("%s",yytext);	
+		} else {	
+			printf("{SEMICOLON}{%d}",yyleng);
+		}
+	}
+}
+    
+
+    
+
+{STAR}+	{
+	if(yyleng==1){
+		if(search_print_struct("STAR")){
+			printf("%s",yytext);	
+        } else { 
+			printf("{STAR}");
+		}
+	} else {
+		if(search_print_struct("STAR")){
+			printf("%s",yytext);	
+		} else {	
+			printf("{STAR}{%d}",yyleng);
+		}
+	}
+}
+    
+
+    
+
+{UNDERSCORE}+	{
+	if(yyleng==1){
+		if(search_print_struct("UNDERSCORE")){
+			printf("%s",yytext);	
+        } else { 
+			printf("{UNDERSCORE}");
+		}
+	} else {
+		if(search_print_struct("UNDERSCORE")){
+			printf("%s",yytext);	
+		} else {	
+			printf("{UNDERSCORE}{%d}",yyleng);
+		}
+	}
+}
+    
+
+{UPPER}+	{
+	if(yyleng==1){
+		if(search_print_struct("UPPER")){
+			printf("%s",yytext);	
+        } else { 
+			printf("{UPPER}");
+		}
+	} else {
+		if(search_print_struct("UPPER")){
+			printf("%s",yytext);	
+		} else {	
+			printf("{UPPER}{%d}",yyleng);
+		}
+	}
+}
+    
+
+{WS}+	{
+	if(yyleng==1){
+		if(search_print_struct("WS")){
+			printf("%s",yytext);	
+        } else { 
+			printf("{WS}");
+		}
+	} else {
+		if(search_print_struct("WS")){
+			printf("%s",yytext);	
+		} else {	
+			printf("{WS}{%d}",yyleng);
+		}
+	}
+}
+    
+
+{XDIGIT}+	{
+	if(yyleng==1){
+		if(search_print_struct("XDIGIT")){
+			printf("%s",yytext);	
+        } else { 
+			printf("{XDIGIT}");
+		}
+	} else {
+		if(search_print_struct("")){
+			printf("%s",yytext);	
+		} else {	
+			printf("{XDIGIT}{%d}",yyleng);
+		}
 	}
 }
 
 
-
-
-{COMMA}+   {
-            if(yyleng==1){
-                    printf("{COMMA}\n");
-            } else {
-                    printf("{COMMA}{%d}\n",yyleng);
-            }
-    }
-
-
-{DAY}+   {
-            if(yyleng==1){
-                    printf("{DAY}\n");
-            } else {
-                    printf("{DAY}{%d}\n",yyleng);
-            }
-    }
-
-{DOLLAR}+   {
-            if(yyleng==1){
-                    printf("{DOLLAR}\n");
-            } else {
-                    printf("{DOLLAR}{%d}\n",yyleng);
-            }
-    }
-
-{DOT}+   {
-            if(yyleng==1){
-                    printf("{DOT}\n");
-            } else {
-                    printf("{DOT}{%d}\n",yyleng);
-            }
-    }
-
-{ESCAPESEQUENCE}+   {
-            if(yyleng==1){
-                    printf("{ESCAPESEQUENCE}\n");
-            } else {
-                    printf("{ESCAPESEQUENCE}{%d}\n",yyleng);
-            }
-    }
-
-
-
-
-
-
-{RBRACE}+   {
-            if(yyleng==1){
-                    printf("{RBRACE}\n");
-            } else {
-                    printf("{RBRACE}{%d}\n",yyleng);
-            }
-    }
-
-{RBRACK}+   {
-            if(yyleng==1){
-                    printf("{RBRACK}\n");
-            } else {
-                    printf("{RBRACK}{%d}\n",yyleng);
-            }
-    }
-
-{SPACE}+   {
-            if(yyleng==1){
-                    printf("{SPACE}\n");
-            } else {
-                    printf("{SPACE}{%d}\n",yyleng);
-            }
-    }
-
-
-
-
-
-{XDIGIT}+   {
-            if(yyleng==1){
-                    printf("{XDIGIT}\n");
-            } else {
-                    printf("{XDIGIT}{%d}\n",yyleng);
-            }
-}
 
 .	;
 %%
 
+
+    

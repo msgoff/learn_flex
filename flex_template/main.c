@@ -27,5 +27,6 @@ int main(int argc, char **argv) {
     S1__delete_buffer(buff1);    // delete the buffer
     munmap(buffer, s.st_size);   // unmap the file from memory
   }
+  
   close(fd); // close file descriptor.
 }
