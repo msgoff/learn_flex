@@ -5,25 +5,6 @@
 int line_start;
 int line_stop;
 int debug;
-//{LPAREN}    {    }
-//{RPAREN}    {    }
-//{LBRACE}    {    }
-//{RBRACE}    {    }
-//{COLON}    {    }
-//{LBRACK}    {    }
-//{RBRACK}    {    }
-//{GT}    {    }
-//{LT}    {    }
-//{POWER}    {    }
-//{PIPE}    {    }
-//{SEMICOLON}    {    }
-//{ESCAPESEQUENCE}    {    }
-//{DOLLAR}    {    }
-//{DOT}    {    }
-//{COMMA}    {    }
-//{DAY}    {    }
-//{MONTH}    {    }
-//{TIMEZONE}    {    }
 %}
 
 %option header="base_flex.h"
@@ -195,42 +176,42 @@ WS	[[:blank:]]
 
 {COMMA}+   {
             if(yyleng==1){
-                    printf("COMMA\n");
+                    printf("{COMMA}\n");
             } else {
-                    printf("COMMA{%d}\n",yyleng);
+                    printf("{COMMA}{%d}\n",yyleng);
             }
     }
 
 
 {DAY}+   {
             if(yyleng==1){
-                    printf("DAY\n");
+                    printf("{DAY}\n");
             } else {
-                    printf("DAY{%d}\n",yyleng);
+                    printf("{DAY}{%d}\n",yyleng);
             }
     }
 
 {DOLLAR}+   {
             if(yyleng==1){
-                    printf("DOLLAR\n");
+                    printf("{DOLLAR}\n");
             } else {
-                    printf("DOLLAR{%d}\n",yyleng);
+                    printf("{DOLLAR}{%d}\n",yyleng);
             }
     }
 
 {DOT}+   {
             if(yyleng==1){
-                    printf("DOT\n");
+                    printf("{DOT}\n");
             } else {
-                    printf("DOT{%d}\n",yyleng);
+                    printf("{DOT}{%d}\n",yyleng);
             }
     }
 
 {ESCAPESEQUENCE}+   {
             if(yyleng==1){
-                    printf("ESCAPESEQUENCE\n");
+                    printf("{ESCAPESEQUENCE}\n");
             } else {
-                    printf("ESCAPESEQUENCE{%d}\n",yyleng);
+                    printf("{ESCAPESEQUENCE}{%d}\n",yyleng);
             }
     }
 
@@ -241,25 +222,25 @@ WS	[[:blank:]]
 
 {RBRACE}+   {
             if(yyleng==1){
-                    printf("RBRACE\n");
+                    printf("{RBRACE}\n");
             } else {
-                    printf("RBRACE{%d}\n",yyleng);
+                    printf("{RBRACE}{%d}\n",yyleng);
             }
     }
 
 {RBRACK}+   {
             if(yyleng==1){
-                    printf("RBRACK\n");
+                    printf("{RBRACK}\n");
             } else {
-                    printf("RBRACK{%d}\n",yyleng);
+                    printf("{RBRACK}{%d}\n",yyleng);
             }
     }
 
 {SPACE}+   {
             if(yyleng==1){
-                    printf("SPACE\n");
+                    printf("{SPACE}\n");
             } else {
-                    printf("SPACE{%d}\n",yyleng);
+                    printf("{SPACE}{%d}\n",yyleng);
             }
     }
 
@@ -269,9 +250,9 @@ WS	[[:blank:]]
 
 {XDIGIT}+   {
             if(yyleng==1){
-                    printf("XDIGIT\n");
+                    printf("{XDIGIT}\n");
             } else {
-                    printf("XDIGIT{%d}\n",yyleng);
+                    printf("{XDIGIT}{%d}\n",yyleng);
             }
 }
 
