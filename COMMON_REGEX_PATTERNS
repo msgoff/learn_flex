@@ -1,36 +1,36 @@
-Common character classes
-
-[:alnum:] -> [0-9a-zA-Z]
-[:alpha:] -> [a-zA-Z]
-[:blank:] -> [ \t\r] "better definitions exist"
-[:cntrl:]
-[:digit:] -> [0-9]
-[:graph:]
-[:lower:] -> [a-z]
-[:upper:] -> [A-Z]
-[:print:] 
-[:punct:]
-[:space:]
-[:xdigit:] -> HEXIDECIMAL
+ALNUM	[:alnum:]
+ALPHA   [:alpha:]
+BLANK 	[:blank:]
+CNTRL	[:cntrl:]
+DIGIT 	[:digit:]
+GRAPH	[:graph:]
+LOWER	[:lower:]
+UPPER	[:upper:] 
+PRINT	[:print:] 
+PUNCT	[:punct:]
+SPACE	[:space:]
+XDIGIT	[:xdigit:]
 
 INT ("+"|"-")?(0|[1-9][0-9]*)
-
-# nl and ws are usually grouped and skipped, although commonly contain useful information about the structure
-
-NL	\n   
-
-LPAREN
-RPAREN
-LBRACE
-RBRACE
-COLON
-LBRACK
-RBRACK
-GT
-LT
-
-<<
->>
-$
-.
-LABEL or ID [a-zA-Z0-9_]
+NL	"\n"   
+LPAREN "("
+RPAREN ")" 
+LBRACE "{" 
+RBRACE "}"
+COLON  ":"
+LBRACK "]"
+RBRACK "]"
+GT ">"
+LT "<"
+POWER "^"
+PIPE "|"
+SEMICOLON ";"
+ESCAPESEQUENCE \\[btnfr\"\']
+DOLLAR "$"
+DOT "."
+COMMA ","
+UNDERSCORCE "_"
+ID [{ALNUM}{UNDERSCORCE}]
+DAY	"Mon"|"Tue"|"Wed"|"Thu"|"Fri"|"Sat"|"Sun"
+MONTH	"Jan"|"Feb"|"Mar"|"Apr"|"May"|"Jun"|"Jul"|"Aug"|"Sep"|"Oct"|"Nov"|"Dec"
+TIMEZONE	"UT"|"GMT"|"EST"|"EDT"|"CST"|"CDT"|"MST"|"MDT"|"PST"|"PDT"

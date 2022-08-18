@@ -1,4 +1,4 @@
 # learn_flex
 
-make  install_flex  
-make  base  
+Learning how to write lexers and parsers with Flex. 
+
