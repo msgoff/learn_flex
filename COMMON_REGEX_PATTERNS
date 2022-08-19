@@ -34,3 +34,7 @@ ID [{ALNUM}{UNDERSCORCE}]
 DAY	"Mon"|"Tue"|"Wed"|"Thu"|"Fri"|"Sat"|"Sun"
 MONTH	"Jan"|"Feb"|"Mar"|"Apr"|"May"|"Jun"|"Jul"|"Aug"|"Sep"|"Oct"|"Nov"|"Dec"
 TIMEZONE	"UT"|"GMT"|"EST"|"EDT"|"CST"|"CDT"|"MST"|"MDT"|"PST"|"PDT"
+%%
+[a-zA-Z0-9.-_]+@[a-zA-Z0-9.-].[a-z]{2,4} ECHO;
+.	;
+%%
