@@ -34,6 +34,14 @@ ID [{ALNUM}{UNDERSCORCE}]
 DAY	"Mon"|"Tue"|"Wed"|"Thu"|"Fri"|"Sat"|"Sun"
 MONTH	"Jan"|"Feb"|"Mar"|"Apr"|"May"|"Jun"|"Jul"|"Aug"|"Sep"|"Oct"|"Nov"|"Dec"
 TIMEZONE	"UT"|"GMT"|"EST"|"EDT"|"CST"|"CDT"|"MST"|"MDT"|"PST"|"PDT"
+
+#CoreNLP definition of Space
+#CR = \r|\n|\r\n|\u0085|\u2028|\u2029
+#OTHERSEP = [\u000B\u000C\u001E\u001F]
+#SPACE = [ \t\u1680\u2000-\u2006\u2008-\u200A\u205F\u3000]
+
+
+
 %%
 [a-zA-Z0-9.-_]+@[a-zA-Z0-9.-]+.[a-z]{2,4} ECHO;
 .	;
