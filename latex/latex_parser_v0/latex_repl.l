@@ -2,35 +2,13 @@
 #include <stdio.h>
 #include <wchar.h>
 #include <locale.h>
-
 int print_unicode(wchar_t unicode) {
-    setlocale(LC_CTYPE, "");
     wprintf(L"%lc", unicode);
 }
-
-
 %}
 
 %%
 
-\\title"{".*"}" ECHO ;
-
-. ; 
-%%
-/*
-
-\\newline ;
-\\author"{".*"}" ECHO  ;
-\\date"{".*"}" ECHO ;
-\address"{" ;
-\\indent ;
-\\email"{".*"}" ECHO ;
-\\thanks"{".*"}" ECHO ;
-\\keywords"{".*"}" ECHO ;
-\\subjclass"{".*"}" ECHO ;
-\nl {printf("\n");}
-test {print_unicode(0x2605);}
-\\mathexclam	{ print_unicode(0x2605); }
 \\mathoctothorpe	{  print_unicode(0x0023); }
 \\mathdollar	{  print_unicode(0x0024); }
 \\mathpercent	{  print_unicode(0x0025); }
@@ -67,6 +45,7 @@ test {print_unicode(0x2605);}
 \\Zbar	{  print_unicode(0x01B5); }
 \\grave	{  print_unicode(0x0300); }
 \\acute	{  print_unicode(0x0301); }
+\\mathexclam	{ print_unicode(0x2605); }
 \\hat	{  print_unicode(0x0302); }
 \\widehat	{  print_unicode(0x0302); }
 \\tilde	{  print_unicode(0x0303); }
@@ -2474,7 +2453,5 @@ test {print_unicode(0x2605);}
 \\mttseven	{  print_unicode(0xD7FD); }
 \\mtteight	{  print_unicode(0xD7FE); }
 \\mttnine	{  print_unicode(0xD7FF); }
-\n ;
-[0-9]+ ECHO;
 
-*/
+%%
