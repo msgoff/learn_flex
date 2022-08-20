@@ -6,6 +6,7 @@
 %{
 #include "expr.tab.h"
 
+void yyerror(char* message);
 %}
 INTEGER (0|[1-9][0-9]*)
 
@@ -27,7 +28,7 @@ INTEGER (0|[1-9][0-9]*)
 "("        return(LB);
 ")"        return(RB);
 \n         return(EOL);
-[\t ]*     /* throw away whitespace */
+[\t ]*     ; 
 .          { yyerror("Illegal character"); 
              return(EOL);
            }
