@@ -35,11 +35,32 @@ DAY	"Mon"|"Tue"|"Wed"|"Thu"|"Fri"|"Sat"|"Sun"
 MONTH	"Jan"|"Feb"|"Mar"|"Apr"|"May"|"Jun"|"Jul"|"Aug"|"Sep"|"Oct"|"Nov"|"Dec"
 TIMEZONE	"UT"|"GMT"|"EST"|"EDT"|"CST"|"CDT"|"MST"|"MDT"|"PST"|"PDT"
 
+GREEK_LETTERS "alpha"|"beta"|"gamma"|"delta"|"epsilon"|"zeta"|"eta"|"theta"|"iota"|"kappa"|"lambda"|"mu"|"nu"|"xi"|"omicron"|"pi"|"rho"|"sigma"|"tau"|"upsilon"|"phi"|"chi"|"psi"|"omega"
+
+
+HOURS 0[1-9]|1[0-9]|2[0-4]
+MIN 0[0-9]|[1-5][0-9]
+SECONDS 0[0-9]|[1-5][0-9]
+
 #CoreNLP definition of Space
 #CR = \r|\n|\r\n|\u0085|\u2028|\u2029
 #OTHERSEP = [\u000B\u000C\u001E\u001F]
 #SPACE = [ \t\u1680\u2000-\u2006\u2008-\u200A\u205F\u3000]
 
+#CORENLP Common lex tokens 
+SPACE = [ \t\u00A0\u2000-\u200A\u202F\u205F\u2063\u3000]
+SPACES = {SPACE}+
+NEWLINE = \r|\r?\n|\u2028|\u2029|\u000B|\u000C|\u0085
+SPACENL = ({SPACE}|{NEWLINE})
+SPACENLS = {SPACENL}+
+/* These next ones are useful to get a fixed length trailing context. */
+SPACENL_ONE_CHAR = [ \t\u00A0\u2000-\u200A\u202F\u205F\u2063\u3000\r\n\u2028\u2029\u000B\u000C\u0085]
+NOT_SPACENL_ONE_CHAR = [^ \t\u00A0\u2000-\u200A\u202F\u205F\u2063\u3000\r\n\u2028\u2029\u000B\u000C\u0085]
+FILENAME_EXT = 3gp|aac|aspx|avi|bat|bmp|bz2|c|class|cgi|cpp|csv|dll|doc|docx|exe|flv|gif|gz|h|hei[cf]|htm|html|jar|java|jpeg|jpg|m4a|m4v|mov|mp[34g]|mpeg|o|pdf|php|pl|png|ppt|pptx|ps|psd|py|rtf|sql|tar|tgz|tif|tiff|tmp|txt|wav|wm[va]|x|xls|xlsx|xml|zip
+FILENAME = [\p{Alpha}\p{Digit}]+([-~.!_/#][\p{Alpha}\p{Digit}]+)*\.{FILENAME_EXT}
+/* phone numbers. keep multi dots pattern separate, so not confused with decimal numbers. And for new treebank tokenization 346-8792. 1st digit can't be 0 or 1 in NANP. */
+/* 2022: Also allow hyphen between area code and number; allow French number like 47-42-17-11 */
+PHONE = (\([0-9]{2,3}\)[- \u00A0\u2007]?|(\+\+?)?([0-9]{1,4}[- \u00A0\u2007\u2012])?[0-9]{2,4}[- \u00A0\u2007\u2012/])[0-9]{3,4}[- \u00A0\u2007\u2012]?[0-9]{3,5}|((\+\+?)?[0-9]{1,4}\.)?[0-9]{2,4}\.[0-9]{2,4}\.[0-9]{2,5}|((\+\+?)?[0-9]{1,4}-)?[0-9]{2,4}-[0-9]{2,4}-[0-9]{2,5}|[2-9][0-9]{2}[-\u2012][0-9]{4}
 
 
 %%

@@ -1,36 +1,41 @@
 %{
-char str1[128];
-char str2[128];
+#include "sds.h"
+sds X;
+sds Y;
 int cost;
-//it substitution has cost of 2 then it is called Levenshtein
+int min_value;
+int distance( sds X, sds Y){
+	if (sdslen(X) == 0) return sdslen(Y);
+	if (sdslen(Y) == 0) return sdslen(X);
+}
 %}
 
 
 %%
 [a-zA-Z]+	{	
-		if (strlen(str1)==0){
-			strcpy(str1,yytext);
-		} else	{
-			strcpy(str2,yytext);
-			}
+		if(X == NULL){	
+			X = sdsnew(yytext);
+		} else {
+			Y = sdsnew(yytext);
+		}	
 }
+
 
 %%
 
 
 int main(int argc, char** argv){
-	memset(str1,'\0',128);
-	memset(str2,'\0',128);
 	yylex();
-	printf("%s:%s\n",str1,str2);
-	if(strlen(str1)==strlen(str2)){
-	for(int i =0;i<strlen(str1);i++){
-		if(str1[i]!=str2[i]){
-			cost+=2;
-		}
-
+	int N = sdslen(X);
+	int M = sdslen(Y);
+	printf("%s",X);
+	sdsrange(X,0,sdslen(X)-2);
+	printf("%s",X);
+	/*for(intd i = 1; i<=N;i++){
+	  for(int j = 1;j<=M;j++){
+		
 	}}
-	printf("cost:%d",cost);
+	*/
 	return 0;
 }
 
