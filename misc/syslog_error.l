@@ -1,6 +1,0 @@
-
-%%
-.*?Prefailure.* ECHO;
-.*?smartd.*	ECHO;
-.	;
-%%
