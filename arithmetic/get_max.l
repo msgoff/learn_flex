@@ -6,16 +6,19 @@ long int max_watchers_count;
 INTEGER 0|[1-9][0-9]*
 %x integer
 %%
-repos.*?":"	{
-	if(strcmp(current_repo,yytext)!=0){	
-		printf("%s:%ld",current_repo,max_watchers_count);
+[a-z]+":"	{
+	if(strcmp(current_repo,yytext)==0){	
+			
+	} else {
+		if(strlen(current_repo)>0)
+			printf("%s%ld\n",current_repo,max_watchers_count);
 		memset(current_repo,'\0',256);
 		strcpy(current_repo,yytext);
-		max_watchers_count=0;
+		max_watchers_count = 0;
 	}
-
 	BEGIN(integer);	
 }
+
 <integer>{INTEGER} {
 	long int cmp = 0;
 	cmp = atol(yytext);	
@@ -25,10 +28,14 @@ repos.*?":"	{
 	BEGIN(0);
 }
 
+\n	;
 %%
 
 int main(int argc, char** argv){
 
 
 	yylex();
+	if(strlen(current_repo)>0)
+		printf("%s%ld\n",current_repo,max_watchers_count);
+	return 0;
 }
