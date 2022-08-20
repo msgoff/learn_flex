@@ -1,7 +1,12 @@
 get_max:
 	flex get_max.l
-	gcc -lfl lex.yy.c 
-	./a.out <get_max_test
+	gcc -lfl lex.yy.c -o get_max.out 
+	./get_max.out <get_max_test
+
+average:
+	flex average.l
+	gcc -lfl lex.yy.c -o average.out
+	./average.out <average_test
 
 parser:
 	rm -rf *.o
