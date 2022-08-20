@@ -4,11 +4,11 @@
 #include "utils.h"
 %}
 integer [0]|[0]?[1-9]+
-factorial factorial
+FACTORIAL "!"
 WS [[:blank:]]
 
 %%
-{factorial}{WS}{integer}    {
+{WS}*{integer}{FACTORIAL}    {
   sds match=sdsnew(yytext);
   sdsrange(match,8,-1);
   sdstrim(match," ");
