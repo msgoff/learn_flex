@@ -1,3 +1,8 @@
+get_max:
+	flex get_max.l
+	gcc -lfl lex.yy.c 
+	./a.out <get_max_test
+
 parser:
 	rm -rf *.o
 	rm -rf *.c
