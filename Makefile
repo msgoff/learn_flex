@@ -13,7 +13,11 @@ install_flex:
 	git clone https://github.com/westes/flex
 	cd flex && bash autogen.sh && ./configure && make && sudo make install && sudo cp src/flex /usr/bin/
 
+sds:
+	git clone https://github.com/antirez/sds.git
+	cp sds/sds* . 
+
 edit_distance:
 	flex -Cf edit_distance.l
-	gcc -lfl lex.yy.c -o edit_distance.out
+	gcc -lfl lex.yy.c sds.c -lm -o edit_distance.out
 	./edit_distance.out < edit_distance_test
