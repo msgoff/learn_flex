@@ -1,6 +1,5 @@
 #include "sds.h"
-#define ARRAY_MAX_LEN 200
-
+#define ARRAY_MAX_LEN 10000
 extern sds checksum_s1[ARRAY_MAX_LEN];
 extern sds filepath_s1[ARRAY_MAX_LEN];
 extern int array_idx_s1;

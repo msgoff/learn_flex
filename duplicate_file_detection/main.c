@@ -10,7 +10,7 @@
 #include "S1_flex.h"
 #include "S2_flex.h"
 #ifndef array
-	#define ARRAY_MAX_LEN 200
+	#define ARRAY_MAX_LEN 10000
 	sds checksum_s1[ARRAY_MAX_LEN];
 	sds filepath_s1[ARRAY_MAX_LEN];
 	int array_idx_s1;
