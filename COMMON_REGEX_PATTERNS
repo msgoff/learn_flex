@@ -23,8 +23,16 @@ RBRACK "]"
 GT ">"
 LT "<"
 POWER "^"
-PIPE "|"
+OR "|"
 SEMICOLON ";"
+COMMA ","
+QUESTION "?"
+STAR "*"
+AT "@"	
+POUND "#"
+NOT "~"
+
+
 ESCAPESEQUENCE \\[btnfr\"\']
 DOLLAR "$"
 DOT "."
