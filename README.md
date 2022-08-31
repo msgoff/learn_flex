@@ -55,6 +55,19 @@ https://github.com/Genivia/RE-flex.git
 for more advanced examples 
 please see postgres and yara 
 https://github.com/postgres/postgres
+	./src/fe_utils/psqlscan.l
+	./src/interfaces/ecpg/preproc/pgc.l
+	./src/bin/psql/psqlscanslash.l
+	./src/bin/pgbench/exprscan.l
+	./src/backend/utils/adt/jsonpath_scan.l
+	./src/backend/utils/misc/guc-file.l
+	./src/backend/replication/syncrep_scanner.l
+	./src/backend/replication/repl_scanner.l
+	./src/backend/bootstrap/bootscanner.l
+	./src/backend/parser/scan.l
+	./src/test/isolation/specscanner.l
+	./contrib/seg/segscan.l
+	./contrib/cube/cubescan.l
 
 
 https://github.com/virustotal/yara
