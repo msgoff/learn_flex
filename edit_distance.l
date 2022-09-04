@@ -78,6 +78,17 @@ int main(int argc, char **argv) {
     }
     printf("\n");
   }
+  for (i = 0; i <= (N - 1); i++) {
+  for (j = 0; j <= (M - 1); j++) {
+  printf("%d:%d",i,j);
+  for (int k  = 0; k < 3; k++) {
+  	if(ptr[i][j][k]){
+		printf(":%d",ptr[i][j][k]);
+	}
+}
+printf("\n");
+
+}}
   printf("min_edit_distance:%d\n", dist[N - 1][M - 1]);
   return 0;
 }
