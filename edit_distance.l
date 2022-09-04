@@ -7,6 +7,8 @@ int arr[3];
 int dist[10][10];
 int i;
 int j;
+int ptr[10][10][3];
+
 void distance(sds X, sds Y, int i, int j) {
   sds tmp_x = X;
   sds tmp_y = Y;
@@ -23,6 +25,16 @@ void distance(sds X, sds Y, int i, int j) {
     }
   }
   dist[i][j] = min;
+  if(arr[0]==min){
+	ptr[i][j][0]=-1;
+  }
+  if(arr[1]==min){
+	ptr[i][j][1]=-2;
+  }
+  if(arr[2]==min){
+	ptr[i][j][2]=-3;
+  }
+
 }
 %}
 
@@ -60,7 +72,7 @@ int main(int argc, char **argv) {
     }
     printf("\n");
   }
-  for (i = 0; i <= (M - 1); i++) {
+  for (i = 0; i <= (N - 1); i++) {
     for (j = 0; j <= (M - 1); j++) {
       printf("(%d,%d,%c:%c)=%d  ", i, j, X[i], Y[j], dist[i][j]);
     }
