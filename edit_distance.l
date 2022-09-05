@@ -25,16 +25,15 @@ void distance(sds X, sds Y, int i, int j) {
     }
   }
   dist[i][j] = min;
-  if(arr[0]==min){
-	ptr[i][j][0]=-1; //deletion
+  if (arr[0] == min) {
+    ptr[i][j][0] = -1; // deletion
   }
-  if(arr[1]==min){
-	ptr[i][j][1]=-2; //insertion
+  if (arr[1] == min) {
+    ptr[i][j][1] = -2; // insertion
   }
-  if(arr[2]==min){
-	ptr[i][j][2]=-3; //substitution cost 2 if neq otherwise 0 
+  if (arr[2] == min) {
+    ptr[i][j][2] = -3; // substitution cost 2 if neq otherwise 0
   }
-
 }
 %}
 
