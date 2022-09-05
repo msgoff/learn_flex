@@ -20,4 +20,4 @@ sds:
 edit_distance:
 	flex -Cf edit_distance.l
 	gcc -lfl -g lex.yy.c sds.c -lm -o edit_distance.out
-	./edit_distance.out < edit_distance_test
+	./edit_distance.out edit_distance_test
