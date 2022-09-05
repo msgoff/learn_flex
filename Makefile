@@ -18,6 +18,10 @@ sds:
 	cp sds/sds* . 
 
 edit_distance:
+	#./edit_distance.out abc a
+	#abc is the src
+	#a is the dest
+	#edit distance 2, delete c, delete b, a = a
 	flex -Cf edit_distance.l
 	gcc -lfl -g lex.yy.c sds.c -lm -o edit_distance.out
 	./edit_distance.out edit_distance_test
