@@ -10,8 +10,20 @@
 
   char *curfilename;
 %}
+%x COMMENT
 
 %%
+"//".*	; 	//comment
+"/*"	{ 
+	BEGIN(COMMENT);
+	printf("BC");
+}
+<COMMENT>\n	;
+<COMMENT>"*/"	{ 
+	printf("b0");
+	BEGIN(0);}
+<COMMENT>.	;
+
 ^"#"[ \t]*include[ \t]*["][^"\n]+["] {
 	printf("%s\n",yytext);
 };
