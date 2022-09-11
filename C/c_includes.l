@@ -14,7 +14,7 @@
 LBRACE "{"
 RBRACE "}"
 WS [ ]
-type int|Bool|void|char|struct|ssize_t|__pid_t|size_t|error_t
+type int|Bool|void|char|double|float|struct|ssize_t|__pid_t|size_t|error_t
 %%
 [^:]+":"	{ printf("%s",yytext);
 	BEGIN(EXTERN);
