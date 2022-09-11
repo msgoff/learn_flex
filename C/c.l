@@ -11,6 +11,8 @@
   char *curfilename;
 %}
 %x COMMENT
+LBRACE "{"
+RBRACE "}"
 
 %%
 "//".*	; 	//comment
@@ -30,32 +32,246 @@
 	printf("%s\n",yytext);
 }
 
+{LBRACE}	{
+	printf("LBRACE ");
+}
+{RBRACE} 	{
+	printf("RBRACE ");
+	
+}
+
+
+"break"                 {
+    printf("BREAK "); 
+}
+"case"                  {
+    printf("CASE "); 
+}
+"char"                  {
+    printf("CHAR "); 
+}
+"const"                 {
+    printf("CONST "); 
+}
+"continue"              {
+    printf("CONTINUE "); 
+}
+"default"               {
+    printf("DEFAULT "); 
+}
+"do"                    {
+    printf("DO "); 
+}
+"double"                {
+    printf("DOUBLE "); 
+}
+"else"                  {
+    printf("ELSE "); 
+}
+"enum"                  {
+    printf("ENUM "); 
+}
+"extern"                {
+    printf("EXTERN "); 
+}
+"float"                 {
+    printf("FLOAT "); 
+}
+"goto"                  {
+    printf("GOTO "); 
+}
+"if"                    {
+    printf("IF "); 
+}
+"inline"                {
+    printf("INLINE "); 
+}
+"int"                   {
+    printf("INT "); 
+}
+"long"                  {
+    printf("LONG "); 
+}
+"register"              {
+    printf("REGISTER "); 
+}
+"restrict"              {
+    printf("RESTRICT "); 
+}
+"return"                {
+    printf("RETURN "); 
+}
+"short"                 {
+    printf("SHORT "); 
+}
+"signed"                {
+    printf("SIGNED "); 
+}
+"sizeof"                {
+    printf("SIZEOF "); 
+}
+"static"                {
+    printf("STATIC "); 
+}
+"struct"                {
+    printf("STRUCT "); 
+}
+"switch"                {
+    printf("SWITCH "); 
+}
+"typedef"               {
+    printf("TYPEDEF "); 
+}
+"union"                 {
+    printf("UNION "); 
+}
+"unsigned"              {
+    printf("UNSIGNED "); 
+}
+"void"                  {
+    printf("VOID "); 
+}
+"volatile"              {
+    printf("VOLATILE "); 
+}
+"while"                 {
+    printf("WHILE "); 
+}
+"_Alignas"              {
+    printf("ALIGNAS "); 
+}
+"_Alignof"              {
+    printf("ALIGNOF "); 
+}
+"_Atomic"               {
+    printf("ATOMIC "); 
+}
+"_Bool"                 {
+    printf("BOOL "); 
+}
+"_Complex"              {
+    printf("COMPLEX "); 
+}
+"_Generic"              {
+    printf("GENERIC "); 
+}
+"_Imaginary"            {
+    printf("IMAGINARY "); 
+}
+"_Noreturn"             {printf("NORETURN "); }
+"_Static_assert"        {
+    printf("STATIC_ASSERT "); 
+}
+"_Thread_local"         {
+    printf("THREAD_LOCAL "); 
+}
+"("                     {
+    printf("LPAREN "); 
+}
+")"                     {
+    printf("RPAREN "); 
+}
+"."                     {
+    printf("DOT "); 
+}
+"->"                    {
+    printf("ARROW "); 
+}
+"++"                    {
+    printf("DBL_PLUS "); 
+}
+"--"                    {
+    printf("DBL_MINUS "); 
+}
+"&"                     {
+    printf("AMPERSAND "); 
+}
+"*"                     {
+    printf("ASTERISK "); 
+}
+"+"                     {
+    printf("PLUS "); 
+}
+"-"                     {
+    printf("MINUS "); 
+}
+"!"                     {
+    printf("EXCLAMATION "); 
+}
+"/"                     {
+    printf("SLASH "); 
+}
+"%"                     {
+    printf("PERCENT "); 
+}
+"<<"                    {
+    printf("LSHIFT "); 
+}
+">>"                    {
+    printf("RSHIFT "); 
+}
+"<"                     {
+    printf("LS "); 
+}
+">"                     {
+    printf("GR "); 
+}
+"<="                    {
+    printf("LE "); 
+}
+">="                    {
+    printf("GE "); 
+}
+"=="                    {
+    printf("EQ "); 
+}
+"!="                    {
+    printf("NE "); 
+}
+"&&"                    {
+    printf("LOG_AND "); 
+}
+"?"                     {
+    printf("QUESTION "); 
+}
+":"                     {
+    printf("COLON "); 
+}
+";"                     {
+    printf("SEMICOLON "); 
+}
+"..."                   {
+    printf("ELLIPSIS "); 
+}
+"="                     {
+    printf("ASSIGN "); 
+}
+"*="                    {
+    printf("MUL_ASSIGN "); 
+}
+"/="                    {
+    printf("DIV_ASSIGN "); 
+}
+"%="                    {
+    printf("MOD_ASSIGN "); 
+}
+"-="                    {
+    printf("SUB_ASSIGN "); 
+}
+"<<="                   {
+    printf("LEFT_ASSIGN "); 
+}
+">>="                   {
+    printf("RIGHT_ASSIGN "); 
+}
+"&="                    {
+    printf("AND_ASSIGN "); 
+}
+","                     {
+    printf("COMMA "); 
+}
 "auto"			{
 	 printf("AUTO "); 
-}
-"char"			{
-	 printf("CHAR "); 
-}
-"const"			{
-	 printf("CONST "); 
-}
-"continue"		{
-	 printf("CONTINUE "); 
-}
-"default"		{
-	 printf("DEFAULT "); 
-}
-"do"			{
-	 printf("DO "); 
-}
-"double"		{
-	 printf("DOUBLE "); 
-}
-"else"			{
-	 printf("ELSE "); 
-}
-"enum"			{
-	 printf("ENUM "); 
 }
 EXIT_SUCCESS		{
 	 printf("RETURN_MESSAGE "); }
@@ -63,135 +279,17 @@ EXIT_SUCCESS		{
 "for"			{
 	 printf("FOR "); 
 }
-"goto"			{
-	 printf("GOTO "); 
-}
-"if"  			{
-	 printf("IF "); } 
  
-"int"  			{
-	 printf("INT "); } 
  
-"long"			{
-	 printf("LONG "); 
-}
 "+="			{
 	 printf("ADD_ASSIGN "); 
-}
-"&="			{
-	 printf("AND_ASSIGN "); 
-}
-"&&"			{
-	 printf("AND_OP "); 
-}
-"--"			{
-	 printf("DEC_OP "); 
-}
-"/="			{
-	 printf("DIV_ASSIGN "); 
-}
-"..."			{
-	 printf("ELLIPSIS "); 
-}
-"=="			{
-	 printf("EQ_OP "); 
-}
-">="			{
-	 printf("GE_OP "); 
-}
-"++"			{
-	 printf("INC_OP "); 
-}
-"<<="			{
-	 printf("LEFT_ASSIGN "); 
-}
-"<<"			{
-	 printf("LEFT_OP "); 
-}
-"<="			{
-	 printf("LE_OP "); 
-}
-"%="			{
-	 printf("MOD_ASSIGN "); 
-}
-"*="			{
-	 printf("MUL_ASSIGN "); 
-}
-"!="			{
-	 printf("NE_OP "); 
-}
-"|="			{
-	 printf("OR_ASSIGN "); 
-}
-"||"			{
-	 printf("OR_OP "); 
 }
 "printf"			{
 	 printf("PRINT "); }
 	
-"->"			{
-	 printf("PTR_OP "); 
-}
-">>="			{
-	 printf("RIGHT_ASSIGN "); 
-}
-">>"			{
-	 printf("RIGHT_OP "); 
-}
-"-="			{
-	 printf("SUB_ASSIGN "); 
-}
-"^="			{
-	 printf("XOR_ASSIGN "); 
-}
 "puts" 			{
 	 printf("PUTS "); }
  
-"register"		{
-	 printf("REGISTER "); 
-}
-"restrict"		{
-	 printf("RESTRICT "); 
-}
-"return"		{
-	 printf("RETURN "); 
-}
-"short"			{
-	 printf("SHORT "); 
-}
-"signed"		{
-	 printf("SIGNED "); 
-}
-"sizeof"		{
-	 printf("SIZEOF "); 
-}
-"static"		{
-	 printf("STATIC "); 
-}
-"struct"		{
-	 printf("STRUCT "); 
-}
-"switch"		{
-	 printf("SWITCH "); 
-}
-"typedef"		{
-	 printf("TYPEDEF "); 
-}
-"union"			{
-	 printf("UNION "); 
-}
-"unsigned"		{
-	 printf("UNSIGNED "); 
-}
-"void"			{
-	 printf("VOID "); }
- 
-"volatile"		{
-	 printf("VOLATILE "); 
-}
-"while"			{
-		 printf("WHILE "); 
-}
 "malloc"			{
 	 printf("MALLOC "); 
 }
@@ -201,10 +299,16 @@ EXIT_SUCCESS		{
 [a-z]+		        {
 	 printf("<%s>",yytext); 
 }
+[ ]+	{
+if (yyleng > 1) {
+  printf("WS{%d} ", yyleng);
+} else {
+  printf("WS ");
+}
+}
 .		        {
 	 printf("<%s>",yytext); 
 }
-
 \n	;
 
 %%
