@@ -14,6 +14,10 @@
 LBRACE "{"
 RBRACE "}"
 
+keywords	"break"|"case"|"continue"|"default"|"do"|"else"|"for"|"goto"|"if"|"return"|"sizeof"|"switch"|"while"
+qualifiers	"const"|"inline"|"long"|"register"|"restrict"|"short"|"signed"|"unsigned"|"volatile"
+
+
 %%
 "//".*	; 	//comment
 "/*"	{ 
