@@ -1,4 +1,6 @@
 # learn_flex  
+
+
   
 Learning how to write lexers and parsers with Flex.   
 I have learned the most about flex by exploring the test cases   
@@ -80,4 +82,9 @@ Most of the grammars here are action-free and with a few modifications can be ma
 https://github.com/antlr/grammars-v4   
   
   
-  
+from the grep documentation  
+grep.info:When feasible, the Boyer–Moore fast string searching algorithm is used  
+grep.info-to match a single fixed pattern, and the Aho–Corasick algorithm is used  
+grep.info-to match multiple fixed patterns.   
+
+
