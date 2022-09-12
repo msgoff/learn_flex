@@ -2,10 +2,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <string.h>
 #include "globals.h"
 int line_start;
 int line_stop;
 int debug;
+char line_buffer[2048];
 struct PRINT {
 	char * name;
 	bool   print_match;	
@@ -101,6 +103,7 @@ WS	[[:blank:]]
 
 
 {COLON}+	{
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("COLON")){
 			printf("%s",yytext);	
@@ -118,6 +121,7 @@ WS	[[:blank:]]
     
 
 {COMMA}+	{
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("COMMA")){
 			printf("%s",yytext);	
@@ -135,6 +139,7 @@ WS	[[:blank:]]
     
 
 {COMMENT}+	{
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("COMMENT")){
 			printf("%s",yytext);	
@@ -153,6 +158,7 @@ WS	[[:blank:]]
 
 
 {DIGIT}+	{
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("DIGIT")){
 			printf("%s",yytext);	
@@ -170,6 +176,7 @@ WS	[[:blank:]]
     
 
 {DOLLAR}+	{
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("DOLLAR")){
 			printf("%s",yytext);	
@@ -187,6 +194,7 @@ WS	[[:blank:]]
     
 
 {DOT}+	{
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("DOT")){
 			printf("%s",yytext);	
@@ -204,6 +212,7 @@ WS	[[:blank:]]
     
 
 {ESCAPESEQUENCE}+	{
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("ESCAPESEQUENCE")){
 			printf("%s",yytext);	
@@ -223,6 +232,7 @@ WS	[[:blank:]]
     
 
 {GT}+	{
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("GT")){
 			printf("%s",yytext);	
@@ -241,6 +251,7 @@ WS	[[:blank:]]
 
 
 {INTEGER}+	{
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("INTEGER")){
 			printf("%s",yytext);	
@@ -258,6 +269,7 @@ WS	[[:blank:]]
     
 
 {LBRACE}+	{
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("LBRACE")){
 			printf("%s",yytext);	
@@ -275,6 +287,7 @@ WS	[[:blank:]]
     
 
 {LBRACK}+	{
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("LT")){
 			printf("%s",yytext);	
@@ -292,6 +305,7 @@ WS	[[:blank:]]
     
 
 {LOWER}+	{
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("LOWER")){
 			printf("%s",yytext);	
@@ -309,6 +323,7 @@ WS	[[:blank:]]
     
 
 {LPAREN}+	{
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("LPAREN")){
 			printf("%s",yytext);	
@@ -326,6 +341,7 @@ WS	[[:blank:]]
     
 
 {LT}+	{
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("WORD")){
 			printf("%s",yytext);	
@@ -345,6 +361,7 @@ WS	[[:blank:]]
     
 
 {NL}+	{
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("NL")){
 			printf("%s",yytext);	
@@ -358,10 +375,15 @@ WS	[[:blank:]]
 			printf("{NL}{%d}\n",yyleng);
 		}
 	}
+	if(strlen(line_buffer)>0){
+		printf("%s\n\n",line_buffer);
+	}
+	memset(line_buffer,'\0',2048);
 }
     
 
 {OR}+	{
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("OR")){
 			printf("%s",yytext);	
@@ -379,6 +401,7 @@ WS	[[:blank:]]
     
 
 {POWER}+	{
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("POWER")){
 			printf("%s",yytext);	
@@ -397,6 +420,7 @@ WS	[[:blank:]]
 
 
 {RBRACE}+	{
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("RBRACE")){
 			printf("%s",yytext);	
@@ -416,6 +440,7 @@ WS	[[:blank:]]
     
 
 {RPAREN}+	{
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("RPAREN")){
 			printf("%s",yytext);	
@@ -433,6 +458,7 @@ WS	[[:blank:]]
     
 
 {SEMICOLON}+	{
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("SEMICOLON")){
 			printf("%s",yytext);	
@@ -452,6 +478,7 @@ WS	[[:blank:]]
     
 
 {STAR}+	{
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("STAR")){
 			printf("%s",yytext);	
@@ -471,6 +498,7 @@ WS	[[:blank:]]
     
 
 {UNDERSCORE}+	{
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("UNDERSCORE")){
 			printf("%s",yytext);	
@@ -488,6 +516,7 @@ WS	[[:blank:]]
     
 
 {UPPER}+	{
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("UPPER")){
 			printf("%s",yytext);	
@@ -505,6 +534,7 @@ WS	[[:blank:]]
     
 
 {WS}+	{
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("WS")){
 			printf("%s",yytext);	
@@ -521,6 +551,7 @@ WS	[[:blank:]]
 }
     
 {FSLASH}+	{
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("FSLASH")){
 			printf("%s",yytext);	
@@ -537,6 +568,7 @@ WS	[[:blank:]]
 }
 
 {XDIGIT}+	{
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("XDIGIT")){
 			printf("%s",yytext);	
