@@ -1,14 +1,17 @@
-#include <stdio.h>
 #include "xxhash.h"
+#include <stdio.h>
+#include <string.h>
+
+/* hash a symbol */
+static unsigned long long tokenHash(char token[]) {
+  XXH64_hash_t const seed = 0;
+  XXH64_hash_t hash = XXH64(token, strlen(token) * sizeof(*token), seed);
+  return hash;
+}
 
 int main() {
-  XXH64_hash_t const seed = 0;
-  char f[1];
-  f[0] = 'a';
-  size_t i = 0;
-  for (i; i < 40000000; i++) {
-    XXH64_hash_t hash = XXH64(f, sizeof(f), seed);
-    //printf("%016llx\n", (unsigned long long)hash);
-  }
+  char f[10];
+  memcpy(f, "hello",strlen("hello"));
+  printf("%016llx", tokenHash(f));
   return 0;
 }
