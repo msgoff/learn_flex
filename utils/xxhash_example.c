@@ -11,6 +11,7 @@ static unsigned long long tokenHash(char token[]) {
 
 int main() {
   char f[10];
+  memset(f,'\0',10);
   memcpy(f, "hello",strlen("hello"));
   printf("%016llx", tokenHash(f));
   return 0;
