@@ -36,6 +36,10 @@ qualifiers	"const"|"inline"|"long"|"register"|"restrict"|"short"|"signed"|"unsig
 	printf("%s\n",yytext);
 }
 
+^"#"[ \t]*(define|ifndef|if|IF|endif).* {
+	printf("%s\n",yytext);
+}
+
 {LBRACE}	{
 	printf("LBRACE ");
 }
@@ -43,6 +47,212 @@ qualifiers	"const"|"inline"|"long"|"register"|"restrict"|"short"|"signed"|"unsig
 	printf("RBRACE ");
 	
 }
+
+
+
+'auto'		printf("AUTO ");
+
+'break'		printf("BREAK ");
+
+'case'		printf("CASE ");
+
+'char'		printf("CHAR ");
+
+'const'		printf("CONST ");
+
+'continue'		printf("CONTINUE ");
+
+'default'		printf("DEFAULT ");
+
+'do'		printf("DO ");
+
+'double'		printf("DOUBLE ");
+
+'else'		printf("ELSE ");
+
+'enum'		printf("ENUM ");
+
+'extern'		printf("EXTERN ");
+
+'float'		printf("FLOAT ");
+
+'for'		printf("FOR ");
+
+'goto'		printf("GOTO ");
+
+'if'		printf("IF ");
+
+'inline'		printf("INLINE ");
+
+'int'		printf("INT ");
+
+'long'		printf("LONG ");
+
+'register'		printf("REGISTER ");
+
+'restrict'		printf("RESTRICT ");
+
+'return'		printf("RETURN ");
+
+'short'		printf("SHORT ");
+
+
+'signed'		printf("SIGNED ");
+
+
+'sizeof'		printf("SIZEOF ");
+
+
+'static'		printf("STATIC ");
+
+
+'struct'		printf("STRUCT ");
+
+
+'switch'		printf("SWITCH ");
+
+
+'typedef'		printf("TYPEDEF ");
+
+
+'union'		printf("UNION ");
+
+
+'unsigned'		printf("UNSIGNED ");
+
+
+'void'		printf("VOID ");
+
+
+'volatile'		printf("VOLATILE ");
+
+
+'while'		printf("WHILE ");
+
+
+'_Alignas'		printf("ALIGNAS ");
+
+
+'_Alignof'		printf("ALIGNOF ");
+
+
+'_Atomic'		printf("ATOMIC ");
+
+
+'_Bool'		printf("BOOL ");
+
+
+'_Complex'		printf("COMPLEX ");
+
+
+'_Generic'		printf("GENERIC ");
+
+
+'_Imaginary'		printf("IMAGINARY ");
+
+
+'_Noreturn'		printf("NORETURN ");
+
+
+'_Static_assert'		printf("STATICASSERT ");
+
+
+'_Thread_local'		printf("THREADLOCAL ");
+
+
+
+
+'<'		printf("LESS ");
+
+
+'<='		printf("LESSEQUAL ");
+
+
+'>'		printf("GREATER ");
+
+
+'>='		printf("GREATEREQUAL ");
+
+
+'<<'		printf("LEFTSHIFT ");
+
+
+'>>'		printf("RIGHTSHIFT ");
+
+
+
+
+'++'		printf("PLUSPLUS ");
+
+
+'-'		printf("MINUS ");
+
+
+'--'		printf("MINUSMINUS ");
+
+
+'*'		printf("STAR ");
+
+
+'%'		printf("MOD ");
+
+
+
+'^'		printf("CARET ");
+
+
+'!'		printf("NOT ");
+
+
+','		printf("COMMA ");
+
+
+'='		printf("ASSIGN ");
+
+
+
+
+'%='		printf("MODASSIGN ");
+
+
+'+='		printf("PLUSASSIGN ");
+
+
+'-='		printf("MINUSASSIGN ");
+
+
+'<<='		printf("LEFTSHIFTASSIGN ");
+
+
+'>>='		printf("RIGHTSHIFTASSIGN ");
+
+
+'&='		printf("ANDASSIGN ");
+
+
+'^='		printf("XORASSIGN ");
+
+
+'|='		printf("ORASSIGN ");
+
+
+'=='		printf("EQUAL ");
+
+
+'!='		printf("NOTEQUAL ");
+
+
+'->'		printf("ARROW ");
+
+
+'.'		printf("DOT ");
+
+
+'...'		printf("ELLIPSIS ");
+        
+
+
+
 
 
 "break"                 {
@@ -169,11 +379,11 @@ qualifiers	"const"|"inline"|"long"|"register"|"restrict"|"short"|"signed"|"unsig
 "_Thread_local"         {
     printf("THREAD_LOCAL "); 
 }
-"("                     {
-    printf("LPAREN "); 
-}
 ")"                     {
     printf("RPAREN "); 
+}
+"("                     {
+    printf("LPAREN "); 
 }
 "."                     {
     printf("DOT "); 
@@ -190,9 +400,6 @@ qualifiers	"const"|"inline"|"long"|"register"|"restrict"|"short"|"signed"|"unsig
 "&"                     {
     printf("AMPERSAND "); 
 }
-"*"                     {
-    printf("ASTERISK "); 
-}
 "+"                     {
     printf("PLUS "); 
 }
@@ -205,6 +412,7 @@ qualifiers	"const"|"inline"|"long"|"register"|"restrict"|"short"|"signed"|"unsig
 "/"                     {
     printf("SLASH "); 
 }
+
 "%"                     {
     printf("PERCENT "); 
 }
@@ -300,8 +508,22 @@ EXIT_SUCCESS		{
 "#ifdef"			{
 	 printf("IFDEF "); 
 }
-[a-z]+		        {
-	 printf("<%s>",yytext); 
+[0-9]	{
+	printf("DIGIT ");
+}
+
+\n+	{
+if (yyleng > 1) {
+  printf("NEWLINE{%d}\n ", yyleng);
+} else {
+  printf("NEWLINE\n ");
+}
+}
+\t	{
+	printf("TAB ");
+}
+[a-zA-Z_]+		        {
+	 printf("<%s> ",yytext); 
 }
 [ ]+	{
 if (yyleng > 1) {
@@ -313,7 +535,6 @@ if (yyleng > 1) {
 .		        {
 	 printf("<%s>",yytext); 
 }
-\n	;
 
 %%
 
