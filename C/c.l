@@ -508,9 +508,12 @@ EXIT_SUCCESS		{
 "#ifdef"			{
 	 printf("IFDEF "); 
 }
-[0-9]	{
-	printf("DIGIT ");
-}
+[0-9]+	{
+if (yyleng > 1) {
+  printf("DIGIT{%d} ", yyleng);
+} else {
+  printf("DIGIT ");
+}}
 
 \n+	{
 if (yyleng > 1) {
@@ -519,8 +522,13 @@ if (yyleng > 1) {
   printf("NEWLINE\n ");
 }
 }
-\t	{
-	printf("TAB ");
+\t+	{
+if (yyleng > 1) {
+  printf("TAB{%d} ", yyleng);
+} else {
+  printf("TAB ");
+}
+
 }
 [a-zA-Z_]+		        {
 	 printf("<%s> ",yytext); 
