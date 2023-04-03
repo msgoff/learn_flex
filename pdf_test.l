@@ -113,7 +113,18 @@ Tagged:[ ]+ { BEGIN(0); }
 UserProperties:[ ]+ { BEGIN(0); }
 Suspects:[ ]+ { BEGIN(0); }
 Form:[ ]+ { BEGIN(0); }
-JavaScript:[ ]+ { BEGIN(0); }
+JavaScript:[ ]+yes { 
+	printf("JavaScript detected");	
+	char cmd[128];
+	memset(cmd,'\0',128);
+	strcpy(cmd,"rsync -axr --progress --remove-source-files ");
+	strcat(cmd,filename);
+	strcat(cmd," /dev/shm/javascript_pdfs/");
+	FILE* cptr;
+	cptr=popen(cmd,"r");
+	pclose(cptr);
+
+}
 Pages:[ ]+ { BEGIN(0); }
 Encrypted:[ ]+yes {
 	printf("PDF is Encrypted");	
