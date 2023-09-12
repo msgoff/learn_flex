@@ -633,8 +633,8 @@ extern char *yytext;
 /* END of m4 controls */
 
 /* START of Flex-generated definitions */
-#define YY_NUM_RULES 27
-#define YY_END_OF_BUFFER 28
+#define YY_NUM_RULES 28
+#define YY_END_OF_BUFFER 29
 #define YY_JAMBASE 0
 #define YY_JAMSTATE 0
 #define YY_NUL_EC 128
@@ -667,6 +667,7 @@ struct yy_trans_info
  * corresponding action - sets up yytext.
  */
 #define YY_DO_BEFORE_ACTION \
+	do { \
 	(yytext_ptr) = yy_bp; \
 	 \
 	yyleng = (int) (yy_cp - yy_bp); \
@@ -674,7 +675,8 @@ struct yy_trans_info
 	(yy_hold_char) = *yy_cp; \
 	*yy_cp = '\0'; \
  \
-	(yy_c_buf_p) = yy_cp;
+	(yy_c_buf_p) = yy_cp; \
+	} while(0)
 
 extern int yyflexdebug;
 int yyflexdebug = 0;
@@ -685,7 +687,7 @@ int yyflexdebug = 0;
 
 /* %% [2.0] data tables for the DFA are inserted here */
 
-/* footprint: 19488 bytes */
+/* footprint: 22608 bytes */
 
 /* m4 controls begin */
 /* M4_MODE_HAS_BACKING_UP */
@@ -694,11 +696,11 @@ int yyflexdebug = 0;
 /* m4 controls end */
 
 /* The transition table */
-static const struct yy_trans_info yy_transition[2431] = {
+static const struct yy_trans_info yy_transition[2821] = {
 {   0,   0},
-{   0,2303},
+{   0,2693},
 {   0,   0},
-{   0,2301},
+{   0,2691},
 {   1, 520},
 
 {   2, 520},
@@ -854,7 +856,7 @@ static const struct yy_trans_info yy_transition[2431] = {
 { 127, 520},
 { 128, 520},
 {   0,   0},
-{   0,2171},
+{   0,2561},
 {   1, 390},
 
 {   2, 390},
@@ -1010,7 +1012,7 @@ static const struct yy_trans_info yy_transition[2431] = {
 { 127, 390},
 { 128, 390},
 {   0,   0},
-{   0,2041},
+{   0,2431},
 {   1, 428},
 
 {   2, 428},
@@ -1166,7 +1168,7 @@ static const struct yy_trans_info yy_transition[2431] = {
 { 127, 428},
 { 128, 428},
 {   0,   0},
-{   0,1911},
+{   0,2301},
 {   1, 298},
 
 {   2, 298},
@@ -1321,30 +1323,30 @@ static const struct yy_trans_info yy_transition[2431] = {
 
 { 127, 298},
 { 128, 298},
-{   0,  26},
-{   0,1781},
+{   0,  27},
+{   0,2171},
 {   0,  24},
 
-{   0,1779},
+{   0,2169},
 {   0,  15},
-{   0,1777},
+{   0,2167},
 {   0,   5},
-{   0,1775},
+{   0,2165},
 
 {   0,  13},
-{   0,1773},
+{   0,2163},
 {   0,  19},
-{   0,1771},
+{   0,2161},
 {   9, 177},
 
 {   0,  21},
-{   0,1768},
+{   0,2158},
 {  10, 244},
-{   0,  26},
-{   0,1765},
+{   0,  27},
+{   0,2155},
 
 {   0,   2},
-{   0,1763},
+{   0,2153},
 {   0,   0},
 {   0,   0},
 {   0,   0},
@@ -1356,28 +1358,28 @@ static const struct yy_trans_info yy_transition[2431] = {
 {   0,   0},
 
 {   0,   6},
-{   0,1753},
-{   0,  26},
-{   0,1751},
+{   0,2143},
+{   0,  25},
+{   0,2141},
 {   0,   0},
 
 {   0,   4},
-{   0,1748},
+{   0,2138},
 {  32, 177},
 {   0,   1},
-{   0,1745},
+{   0,2135},
 
 {   0,  20},
-{   0,1743},
+{   0,2133},
 {   0,   0},
 {   0,   0},
 {   0,   0},
 
 {  36, 254},
 {   0,  14},
-{   0,1737},
+{   0,2127},
 {   0,   8},
-{   0,1735},
+{   0,2125},
 
 {   0,   0},
 {  40, 281},
@@ -1394,7 +1396,7 @@ static const struct yy_trans_info yy_transition[2431] = {
 {   0,   0},
 {   0,   0},
 {   0,  11},
-{   0,1721},
+{   0,2111},
 {   0,   0},
 
 {  44, 294},
@@ -1418,7 +1420,7 @@ static const struct yy_trans_info yy_transition[2431] = {
 {  47, 307},
 {  45, 421},
 {   0,  17},
-{   0,1701},
+{   0,2091},
 {  48, 436},
 
 {  49, 496},
@@ -1434,7 +1436,7 @@ static const struct yy_trans_info yy_transition[2431] = {
 {   0,   0},
 
 {   0,   4},
-{   0,1688},
+{   0,2078},
 {  58, 351},
 {   0,   0},
 {   0,   0},
@@ -1460,16 +1462,16 @@ static const struct yy_trans_info yy_transition[2431] = {
 {   0,   0},
 {   0,   0},
 {   0,  22},
-{   0,1666},
+{   0,2056},
 {   0,   0},
 
 {   0,   0},
 {   0,   0},
 {   0,  10},
-{   0,1661},
+{   0,2051},
 {   0,  16},
 
-{   0,1659},
+{   0,2049},
 {   0,   0},
 {   0,   0},
 {   0,   0},
@@ -1505,7 +1507,7 @@ static const struct yy_trans_info yy_transition[2431] = {
 {  57, 569},
 {   0,  23},
 
-{   0,1629},
+{   0,2019},
 {  93, 411},
 {   0,   0},
 {   0,   0},
@@ -1521,10 +1523,10 @@ static const struct yy_trans_info yy_transition[2431] = {
 {  70, 459},
 {   0,   0},
 {   0,  18},
-{   0,1615},
+{   0,2005},
 
-{   0,  27},
-{   0,1613},
+{   0,  28},
+{   0,2003},
 {   0,   0},
 {   0,   0},
 {   0,   0},
@@ -1537,7 +1539,7 @@ static const struct yy_trans_info yy_transition[2431] = {
 
 {   0,   0},
 {   0,  24},
-{   0,1602},
+{   0,1992},
 {   0,   0},
 {   0,   0},
 
@@ -1559,7 +1561,7 @@ static const struct yy_trans_info yy_transition[2431] = {
 { 102, 459},
 {   0,  23},
 
-{   0,1584},
+{   0,1974},
 {   0,   0},
 {   0,   0},
 {  48, 400},
@@ -1620,7 +1622,7 @@ static const struct yy_trans_info yy_transition[2431] = {
 { 124, 419},
 
 {   0,  15},
-{   0,1533},
+{   0,1923},
 {  97, 400},
 {  98, 400},
 {  99, 400},
@@ -1628,13 +1630,13 @@ static const struct yy_trans_info yy_transition[2431] = {
 { 100, 400},
 { 101, 400},
 { 102, 400},
-{   0,  26},
-{   0,1525},
+{   0,  27},
+{   0,1915},
 
 {   0,   0},
 {  10,   0},
 {   0,   5},
-{   0,1521},
+{   0,1911},
 {   0,   0},
 
 {  65, 541},
@@ -1669,18 +1671,18 @@ static const struct yy_trans_info yy_transition[2431] = {
 
 {  90, 541},
 {   0,  13},
-{   0,1492},
+{   0,1882},
 {  34, 211},
 { 125, 377},
 
 {   0,   0},
 {   0,  12},
-{   0,1487},
+{   0,1877},
 {  39, 211},
 {  36,   0},
 
 {   0,  19},
-{   0,1483},
+{   0,1873},
 {   0,   0},
 {   0,   0},
 {   0,   0},
@@ -1694,10 +1696,10 @@ static const struct yy_trans_info yy_transition[2431] = {
 {   0,   0},
 {   0,   0},
 {   0,  21},
-{   0,1471},
+{   0,1861},
 {   0,   2},
 
-{   0,1469},
+{   0,1859},
 {   0,   0},
 {   0,   0},
 {   0,   0},
@@ -1706,14 +1708,14 @@ static const struct yy_trans_info yy_transition[2431] = {
 {   0,   0},
 {   0,   0},
 {   0,  12},
-{   0,1461},
+{   0,1851},
 {   0,   6},
 
-{   0,1459},
+{   0,1849},
 {   0,   0},
 {   0,   0},
 {   0,   9},
-{   0,1455},
+{   0,1845},
 
 {   0,   0},
 {   0,   0},
@@ -1725,9 +1727,9 @@ static const struct yy_trans_info yy_transition[2431] = {
 {   0,   0},
 {   0,   0},
 {   0,   0},
-{   0,   0},
+{   0,  25},
 
-{   0,1444},
+{   0,1834},
 {   0,   0},
 {  41,   0},
 {   0,   0},
@@ -1787,9 +1789,9 @@ static const struct yy_trans_info yy_transition[2431] = {
 {   0,   0},
 {   0,   1},
 
-{   0,1394},
+{   0,1784},
 {   0,  20},
-{   0,1392},
+{   0,1782},
 {   0,   0},
 {  97, 498},
 
@@ -1855,7 +1857,7 @@ static const struct yy_trans_info yy_transition[2431] = {
 
 { 122, 510},
 {   0,   9},
-{   0,1337},
+{   0,1727},
 {  58,   0},
 {   0,   0},
 
@@ -1867,9 +1869,9 @@ static const struct yy_trans_info yy_transition[2431] = {
 
 {   0,   0},
 {   0,   0},
-{   0,1327},
+{   0,1717},
 {   0,  14},
-{   0,1325},
+{   0,1715},
 
 {   0,   0},
 {   0,   0},
@@ -1880,14 +1882,14 @@ static const struct yy_trans_info yy_transition[2431] = {
 {   0,   0},
 {   0,   0},
 {   0,   8},
-{   0,1316},
+{   0,1706},
 {   0,   7},
 
-{   0,1314},
+{   0,1704},
 {   0,   4},
-{   0,1312},
+{   0,1702},
 {   0,  11},
-{   0,1310},
+{   0,1700},
 
 {   0,   0},
 {   0,   0},
@@ -1897,9 +1899,9 @@ static const struct yy_trans_info yy_transition[2431] = {
 
 {   0,   0},
 {   0,  17},
-{   0,1302},
+{   0,1692},
 {   0,  22},
-{   0,1300},
+{   0,1690},
 
 {   0,   0},
 {   0,   0},
@@ -1911,7 +1913,7 @@ static const struct yy_trans_info yy_transition[2431] = {
 {   0,   0},
 {  45,  10},
 {   0,  10},
-{   0,1290},
+{   0,1680},
 
 {  48, 472},
 {  49, 510},
@@ -1957,7 +1959,7 @@ static const struct yy_trans_info yy_transition[2431] = {
 
 {  62,   0},
 {   0,   4},
-{   0,1252},
+{   0,1642},
 {   0,   0},
 {   0,   0},
 
@@ -1971,10 +1973,10 @@ static const struct yy_trans_info yy_transition[2431] = {
 {  69,  83},
 {  70,  83},
 {   0,  16},
-{   0,1240},
+{   0,1630},
 
 {   0,  18},
-{   0,1238},
+{   0,1628},
 {   0,   0},
 {   0,   0},
 {   0,   0},
@@ -1983,9 +1985,9 @@ static const struct yy_trans_info yy_transition[2431] = {
 {   0,   0},
 {   0,   0},
 {   0,   0},
-{   0,  25},
+{   0,  26},
 
-{   0,1229},
+{   0,1619},
 {   0,   0},
 {   0,   0},
 {   0,   0},
@@ -2030,7 +2032,7 @@ static const struct yy_trans_info yy_transition[2431] = {
 {   0,   0},
 {   0,   0},
 {   0,   4},
-{   0,1191},
+{   0,1581},
 {   0,   0},
 
 {   0,   0},
@@ -2117,7 +2119,7 @@ static const struct yy_trans_info yy_transition[2431] = {
 {  70, -38},
 {   0,   4},
 
-{   0,1119},
+{   0,1509},
 {   0,   0},
 {   0,   0},
 { 124,   0},
@@ -2162,7 +2164,7 @@ static const struct yy_trans_info yy_transition[2431] = {
 {   0,   0},
 {   0,   0},
 {   0,  23},
-{   0,1081},
+{   0,1471},
 {   0,   0},
 
 {   0,   0},
@@ -2208,7 +2210,7 @@ static const struct yy_trans_info yy_transition[2431] = {
 {   0,   0},
 
 {   0,  23},
-{   0,1043},
+{   0,1433},
 {   0,   0},
 {   0,   0},
 {   0,   0},
@@ -2273,7 +2275,7 @@ static const struct yy_trans_info yy_transition[2431] = {
 {  90,  38},
 {   0,  12},
 
-{   0, 989},
+{   0,1379},
 {   0,   0},
 {   0,   0},
 {   0,   0},
@@ -2318,7 +2320,7 @@ static const struct yy_trans_info yy_transition[2431] = {
 {  89,   0},
 {  90,   0},
 {   0,  12},
-{   0, 951},
+{   0,1341},
 {   0,   0},
 
 {   0,   0},
@@ -2421,7 +2423,7 @@ static const struct yy_trans_info yy_transition[2431] = {
 { 121,  38},
 { 122,  38},
 {   0,   9},
-{   0, 865},
+{   0,1255},
 
 {   0,   0},
 {   0,   0},
@@ -2467,7 +2469,7 @@ static const struct yy_trans_info yy_transition[2431] = {
 
 { 122,   0},
 {   0,   9},
-{   0, 827},
+{   0,1217},
 {   0,   0},
 {   0,   0},
 
@@ -2538,7 +2540,7 @@ static const struct yy_trans_info yy_transition[2431] = {
 {  57,   0},
 
 {   0,   3},
-{   0, 768},
+{   0,1158},
 {   1, 248},
 {   2, 248},
 {   3, 248},
@@ -2694,7 +2696,7 @@ static const struct yy_trans_info yy_transition[2431] = {
 { 128, 248},
 
 {   0,   0},
-{   0, 638},
+{   0,1028},
 {   0,   0},
 {   0,   0},
 {   0,   0},
@@ -2835,7 +2837,7 @@ static const struct yy_trans_info yy_transition[2431] = {
 {   0,   0},
 { 116,-676},
 {   0,   3},
-{   0, 520},
+{   0, 910},
 
 {   1,   0},
 {   2,   0},
@@ -2892,7 +2894,7 @@ static const struct yy_trans_info yy_transition[2431] = {
 {  45,   0},
 
 {  46,   0},
-{  47, 130},
+{  47, 260},
 {  48,   0},
 {  49,   0},
 {  50,   0},
@@ -2991,7 +2993,7 @@ static const struct yy_trans_info yy_transition[2431] = {
 { 127,   0},
 { 128,   0},
 {   0,   3},
-{   0, 390},
+{   0, 780},
 
 {   1,-130},
 {   2,-130},
@@ -3048,7 +3050,7 @@ static const struct yy_trans_info yy_transition[2431] = {
 {  45,-130},
 
 {  46,-130},
-{  47, 130},
+{  47, 260},
 {  48,-130},
 {  49,-130},
 {  50,-130},
@@ -3147,7 +3149,7 @@ static const struct yy_trans_info yy_transition[2431] = {
 { 127,-130},
 { 128,-130},
 {   0,   3},
-{   0, 260},
+{   0, 650},
 
 {   1,-260},
 {   2,-260},
@@ -3204,7 +3206,7 @@ static const struct yy_trans_info yy_transition[2431] = {
 {  45,-260},
 
 {  46,-260},
-{  47, 130},
+{  47, 260},
 {  48,-260},
 {  49,-260},
 {  50,-260},
@@ -3303,7 +3305,7 @@ static const struct yy_trans_info yy_transition[2431] = {
 { 127,-260},
 { 128,-260},
 {   0,   3},
-{   0, 130},
+{   0, 520},
 
 {   1,-390},
 {   2,-390},
@@ -3360,7 +3362,7 @@ static const struct yy_trans_info yy_transition[2431] = {
 {  45,-390},
 
 {  46,-390},
-{  47,   0},
+{  47, 260},
 {  48,-390},
 {  49,-390},
 {  50,-390},
@@ -3458,7 +3460,475 @@ static const struct yy_trans_info yy_transition[2431] = {
 { 126,-390},
 { 127,-390},
 { 128,-390},
-{ 129,  28},
+{   0,   3},
+{   0, 390},
+
+{   1,-520},
+{   2,-520},
+{   3,-520},
+{   4,-520},
+{   5,-520},
+
+{   6,-520},
+{   7,-520},
+{   8,-520},
+{   9,-520},
+{   0,   0},
+
+{  11,-520},
+{  12,-520},
+{  13,-520},
+{  14,-520},
+{  15,-520},
+
+{  16,-520},
+{  17,-520},
+{  18,-520},
+{  19,-520},
+{  20,-520},
+
+{  21,-520},
+{  22,-520},
+{  23,-520},
+{  24,-520},
+{  25,-520},
+
+{  26,-520},
+{  27,-520},
+{  28,-520},
+{  29,-520},
+{  30,-520},
+
+{  31,-520},
+{  32,-520},
+{  33,-520},
+{  34,-520},
+{  35,-520},
+
+{  36,-520},
+{  37,-520},
+{  38,-520},
+{  39,-520},
+{  40,-520},
+
+{  41,-520},
+{  42,-520},
+{  43,-520},
+{  44,-520},
+{  45,-520},
+
+{  46,-520},
+{  47, 260},
+{  48,-520},
+{  49,-520},
+{  50,-520},
+
+{  51,-520},
+{  52,-520},
+{  53,-520},
+{  54,-520},
+{  55,-520},
+
+{  56,-520},
+{  57,-520},
+{  58,-520},
+{  59,-520},
+{  60,-520},
+
+{  61,-520},
+{  62,-520},
+{  63,-520},
+{  64,-520},
+{  65,-520},
+
+{  66,-520},
+{  67,-520},
+{  68,-520},
+{  69,-520},
+{  70,-520},
+
+{  71,-520},
+{  72,-520},
+{  73,-520},
+{  74,-520},
+{  75,-520},
+
+{  76,-520},
+{  77,-520},
+{  78,-520},
+{  79,-520},
+{  80,-520},
+
+{  81,-520},
+{  82,-520},
+{  83,-520},
+{  84,-520},
+{  85,-520},
+
+{  86,-520},
+{  87,-520},
+{  88,-520},
+{  89,-520},
+{  90,-520},
+
+{  91,-520},
+{  92,-520},
+{  93,-520},
+{  94,-520},
+{  95,-520},
+
+{  96,-520},
+{  97,-520},
+{  98,-520},
+{  99,-520},
+{ 100,-520},
+
+{ 101,-520},
+{ 102,-520},
+{ 103,-520},
+{ 104,-520},
+{ 105,-520},
+
+{ 106,-520},
+{ 107,-520},
+{ 108,-520},
+{ 109,-520},
+{ 110,-520},
+
+{ 111,-520},
+{ 112,-520},
+{ 113,-520},
+{ 114,-520},
+{ 115,-520},
+
+{ 116,-520},
+{ 117,-520},
+{ 118,-520},
+{ 119,-520},
+{ 120,-520},
+
+{ 121,-520},
+{ 122,-520},
+{ 123,-520},
+{ 124,-520},
+{ 125,-520},
+
+{ 126,-520},
+{ 127,-520},
+{ 128,-520},
+{   0,   3},
+{   0, 260},
+
+{   1,-650},
+{   2,-650},
+{   3,-650},
+{   4,-650},
+{   5,-650},
+
+{   6,-650},
+{   7,-650},
+{   8,-650},
+{   9,-650},
+{   0,   0},
+
+{  11,-650},
+{  12,-650},
+{  13,-650},
+{  14,-650},
+{  15,-650},
+
+{  16,-650},
+{  17,-650},
+{  18,-650},
+{  19,-650},
+{  20,-650},
+
+{  21,-650},
+{  22,-650},
+{  23,-650},
+{  24,-650},
+{  25,-650},
+
+{  26,-650},
+{  27,-650},
+{  28,-650},
+{  29,-650},
+{  30,-650},
+
+{  31,-650},
+{  32,-650},
+{  33,-650},
+{  34,-650},
+{  35,-650},
+
+{  36,-650},
+{  37,-650},
+{  38,-650},
+{  39,-650},
+{  40,-650},
+
+{  41,-650},
+{  42,-650},
+{  43,-650},
+{  44,-650},
+{  45,-650},
+
+{  46,-650},
+{  47,   0},
+{  48,-650},
+{  49,-650},
+{  50,-650},
+
+{  51,-650},
+{  52,-650},
+{  53,-650},
+{  54,-650},
+{  55,-650},
+
+{  56,-650},
+{  57,-650},
+{  58,-650},
+{  59,-650},
+{  60,-650},
+
+{  61,-650},
+{  62,-650},
+{  63,-650},
+{  64,-650},
+{  65,-650},
+
+{  66,-650},
+{  67,-650},
+{  68,-650},
+{  69,-650},
+{  70,-650},
+
+{  71,-650},
+{  72,-650},
+{  73,-650},
+{  74,-650},
+{  75,-650},
+
+{  76,-650},
+{  77,-650},
+{  78,-650},
+{  79,-650},
+{  80,-650},
+
+{  81,-650},
+{  82,-650},
+{  83,-650},
+{  84,-650},
+{  85,-650},
+
+{  86,-650},
+{  87,-650},
+{  88,-650},
+{  89,-650},
+{  90,-650},
+
+{  91,-650},
+{  92,-650},
+{  93,-650},
+{  94,-650},
+{  95,-650},
+
+{  96,-650},
+{  97,-650},
+{  98,-650},
+{  99,-650},
+{ 100,-650},
+
+{ 101,-650},
+{ 102,-650},
+{ 103,-650},
+{ 104,-650},
+{ 105,-650},
+
+{ 106,-650},
+{ 107,-650},
+{ 108,-650},
+{ 109,-650},
+{ 110,-650},
+
+{ 111,-650},
+{ 112,-650},
+{ 113,-650},
+{ 114,-650},
+{ 115,-650},
+
+{ 116,-650},
+{ 117,-650},
+{ 118,-650},
+{ 119,-650},
+{ 120,-650},
+
+{ 121,-650},
+{ 122,-650},
+{ 123,-650},
+{ 124,-650},
+{ 125,-650},
+
+{ 126,-650},
+{ 127,-650},
+{ 128,-650},
+{   0,   3},
+{   0, 130},
+
+{   1,-780},
+{   2,-780},
+{   3,-780},
+{   4,-780},
+{   5,-780},
+
+{   6,-780},
+{   7,-780},
+{   8,-780},
+{   9,-780},
+{   0,   0},
+
+{  11,-780},
+{  12,-780},
+{  13,-780},
+{  14,-780},
+{  15,-780},
+
+{  16,-780},
+{  17,-780},
+{  18,-780},
+{  19,-780},
+{  20,-780},
+
+{  21,-780},
+{  22,-780},
+{  23,-780},
+{  24,-780},
+{  25,-780},
+
+{  26,-780},
+{  27,-780},
+{  28,-780},
+{  29,-780},
+{  30,-780},
+
+{  31,-780},
+{  32,-780},
+{  33,-780},
+{  34,-780},
+{  35,-780},
+
+{  36,-780},
+{  37,-780},
+{  38,-780},
+{  39,-780},
+{  40,-780},
+
+{  41,-780},
+{  42,-780},
+{  43,-780},
+{  44,-780},
+{  45,-780},
+
+{  46,-780},
+{  47,   0},
+{  48,-780},
+{  49,-780},
+{  50,-780},
+
+{  51,-780},
+{  52,-780},
+{  53,-780},
+{  54,-780},
+{  55,-780},
+
+{  56,-780},
+{  57,-780},
+{  58,-780},
+{  59,-780},
+{  60,-780},
+
+{  61,-780},
+{  62,-780},
+{  63,-780},
+{  64,-780},
+{  65,-780},
+
+{  66,-780},
+{  67,-780},
+{  68,-780},
+{  69,-780},
+{  70,-780},
+
+{  71,-780},
+{  72,-780},
+{  73,-780},
+{  74,-780},
+{  75,-780},
+
+{  76,-780},
+{  77,-780},
+{  78,-780},
+{  79,-780},
+{  80,-780},
+
+{  81,-780},
+{  82,-780},
+{  83,-780},
+{  84,-780},
+{  85,-780},
+
+{  86,-780},
+{  87,-780},
+{  88,-780},
+{  89,-780},
+{  90,-780},
+
+{  91,-780},
+{  92,-780},
+{  93,-780},
+{  94,-780},
+{  95,-780},
+
+{  96,-780},
+{  97,-780},
+{  98,-780},
+{  99,-780},
+{ 100,-780},
+
+{ 101,-780},
+{ 102,-780},
+{ 103,-780},
+{ 104,-780},
+{ 105,-780},
+
+{ 106,-780},
+{ 107,-780},
+{ 108,-780},
+{ 109,-780},
+{ 110,-780},
+
+{ 111,-780},
+{ 112,-780},
+{ 113,-780},
+{ 114,-780},
+{ 115,-780},
+
+{ 116,-780},
+{ 117,-780},
+{ 118,-780},
+{ 119,-780},
+{ 120,-780},
+
+{ 121,-780},
+{ 122,-780},
+{ 123,-780},
+{ 124,-780},
+{ 125,-780},
+
+{ 126,-780},
+{ 127,-780},
+{ 128,-780},
+{ 129,  29},
 {   1,   0},
 
 };
@@ -3497,54 +3967,59 @@ char *yytext;
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <string.h>
 #include "globals.h"
 int line_start;
 int line_stop;
 int debug;
+char line_buffer[2048];
 struct PRINT {
 	char * name;
 	bool   print_match;	
 }data[]={
-	"COLON",true,
-	"COMMA",true,
-	"COMMENT",true,
-	"DIGIT",true,
-	"DOLLAR",true,
-	"DOT",true,
-	"ESCAPESEQUENCE",true,
-	"GT",true,
-	"INTEGER",true,
-	"LBRACE",true,
-	"LBRACK",true,
-	"LOWER",true,
-	"LPAREN",true,
-	"LT",true,
-	"MONTH",true,
-	"NL",true,
-	"OR",true,
-	"POWER",true,
-	"RBRACE",true,
-	"RBRACK",true,
-	"RPAREN",true,
-	"SEMICOLON",true,
-	"STAR",true,
-	"TIMEZONE",true,
-	"UNDERSCORE",true,
-	"UPPER",true,
-	"WS",true,
-	"XDIGIT",true,
+	//false will show the RLE for the match
+	//true  will show the actual match 
+	"COLON",false,
+	"COMMA",false,
+	"COMMENT",false,
+	"DIGIT",false,
+	"DOLLAR",false,
+	"DOT",false,
+	"ESCAPESEQUENCE",false,
+	"FSLASH",false,
+	"GT",false,
+	"INTEGER",false,
+	"LBRACE",false,
+	"LBRACK",false,
+	"LOWER",false,
+	"LPAREN",false,
+	"LT",false,
+	"MONTH",false,
+	"NL",false,
+	"OR",false,
+	"POWER",false,
+	"RBRACE",false,
+	"RBRACK",false,
+	"RPAREN",false,
+	"SEMICOLON",false,
+	"STAR",false,
+	"TIMEZONE",false,
+	"UNDERSCORE",false,
+	"UPPER",false,
+	"WS",false,
+	"XDIGIT",false,
 };
 
 bool search_print_struct(char* state){
 	for(int i=0;i<sizeof(data)/sizeof(data[0]);i++){
-		if(!strcmp(state,data[i].name)){
+		if(strcmp(state,data[i].name)==0){
 			return data[i].print_match;
 		}
 	}
 }
+#line 4021 "lex.S1_.c"
 
-
-
+#line 4023 "lex.S1_.c"
 
 #define INITIAL 0
 #define line 1
@@ -3795,11 +4270,11 @@ YY_DECL {
 	/* open scope of user declarationns */
 	{
 /* %% [4.0] user's declarations go here */
-#line 96 "scanner.l"
+#line 102 "scanner.l"
 
 
 
-
+#line 4278 "lex.S1_.c"
 
 		while ( /*CONSTCOND*/1 ) {		/* loops until end-of-file is reached */
 
@@ -3867,8 +4342,9 @@ yy_current_state = yy_start_state_list[(yy_start)];
 	case 1:
 YY_RULE_SETUP
 
-#line 99 "scanner.l"
+#line 105 "scanner.l"
 {
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("COLON")){
 			printf("%s",yytext);	
@@ -3887,8 +4363,9 @@ YY_RULE_SETUP
 	case 2:
 YY_RULE_SETUP
 
-#line 116 "scanner.l"
+#line 123 "scanner.l"
 {
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("COMMA")){
 			printf("%s",yytext);	
@@ -3907,8 +4384,9 @@ YY_RULE_SETUP
 	case 3:
 YY_RULE_SETUP
 
-#line 133 "scanner.l"
+#line 141 "scanner.l"
 {
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("COMMENT")){
 			printf("%s",yytext);	
@@ -3927,8 +4405,9 @@ YY_RULE_SETUP
 	case 4:
 YY_RULE_SETUP
 
-#line 151 "scanner.l"
+#line 160 "scanner.l"
 {
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("DIGIT")){
 			printf("%s",yytext);	
@@ -3947,8 +4426,9 @@ YY_RULE_SETUP
 	case 5:
 YY_RULE_SETUP
 
-#line 168 "scanner.l"
+#line 178 "scanner.l"
 {
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("DOLLAR")){
 			printf("%s",yytext);	
@@ -3967,8 +4447,9 @@ YY_RULE_SETUP
 	case 6:
 YY_RULE_SETUP
 
-#line 185 "scanner.l"
+#line 196 "scanner.l"
 {
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("DOT")){
 			printf("%s",yytext);	
@@ -3987,8 +4468,9 @@ YY_RULE_SETUP
 	case 7:
 YY_RULE_SETUP
 
-#line 202 "scanner.l"
+#line 214 "scanner.l"
 {
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("ESCAPESEQUENCE")){
 			printf("%s",yytext);	
@@ -4007,8 +4489,9 @@ YY_RULE_SETUP
 	case 8:
 YY_RULE_SETUP
 
-#line 221 "scanner.l"
+#line 234 "scanner.l"
 {
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("GT")){
 			printf("%s",yytext);	
@@ -4027,8 +4510,9 @@ YY_RULE_SETUP
 	case 9:
 YY_RULE_SETUP
 
-#line 239 "scanner.l"
+#line 253 "scanner.l"
 {
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("INTEGER")){
 			printf("%s",yytext);	
@@ -4047,8 +4531,9 @@ YY_RULE_SETUP
 	case 10:
 YY_RULE_SETUP
 
-#line 256 "scanner.l"
+#line 271 "scanner.l"
 {
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("LBRACE")){
 			printf("%s",yytext);	
@@ -4067,8 +4552,9 @@ YY_RULE_SETUP
 	case 11:
 YY_RULE_SETUP
 
-#line 273 "scanner.l"
+#line 289 "scanner.l"
 {
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("LT")){
 			printf("%s",yytext);	
@@ -4087,8 +4573,9 @@ YY_RULE_SETUP
 	case 12:
 YY_RULE_SETUP
 
-#line 290 "scanner.l"
+#line 307 "scanner.l"
 {
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("LOWER")){
 			printf("%s",yytext);	
@@ -4107,8 +4594,9 @@ YY_RULE_SETUP
 	case 13:
 YY_RULE_SETUP
 
-#line 307 "scanner.l"
+#line 325 "scanner.l"
 {
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("LPAREN")){
 			printf("%s",yytext);	
@@ -4127,8 +4615,9 @@ YY_RULE_SETUP
 	case 14:
 YY_RULE_SETUP
 
-#line 324 "scanner.l"
+#line 343 "scanner.l"
 {
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("WORD")){
 			printf("%s",yytext);	
@@ -4148,28 +4637,34 @@ YY_RULE_SETUP
 /* rule 15 can match eol */
 YY_RULE_SETUP
 
-#line 343 "scanner.l"
+#line 363 "scanner.l"
 {
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("NL")){
 			printf("%s",yytext);	
         } else { 
-			printf("{NL}");
+			printf("{NL}\n");
 		}
 	} else {
 		if(search_print_struct("NL")){
 			printf("%s",yytext);	
 		} else {	
-			printf("{NL}{%d}",yyleng);
+			printf("{NL}{%d}\n",yyleng);
 		}
 	}
+	if(strlen(line_buffer)>0){
+		printf("%s\n\n",line_buffer);
+	}
+	memset(line_buffer,'\0',2048);
 }
 	/*LINTED*/break;
 	case 16:
 YY_RULE_SETUP
 
-#line 360 "scanner.l"
+#line 385 "scanner.l"
 {
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("OR")){
 			printf("%s",yytext);	
@@ -4188,8 +4683,9 @@ YY_RULE_SETUP
 	case 17:
 YY_RULE_SETUP
 
-#line 377 "scanner.l"
+#line 403 "scanner.l"
 {
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("POWER")){
 			printf("%s",yytext);	
@@ -4208,8 +4704,9 @@ YY_RULE_SETUP
 	case 18:
 YY_RULE_SETUP
 
-#line 395 "scanner.l"
+#line 422 "scanner.l"
 {
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("RBRACE")){
 			printf("%s",yytext);	
@@ -4228,8 +4725,9 @@ YY_RULE_SETUP
 	case 19:
 YY_RULE_SETUP
 
-#line 414 "scanner.l"
+#line 442 "scanner.l"
 {
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("RPAREN")){
 			printf("%s",yytext);	
@@ -4248,8 +4746,9 @@ YY_RULE_SETUP
 	case 20:
 YY_RULE_SETUP
 
-#line 431 "scanner.l"
+#line 460 "scanner.l"
 {
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("SEMICOLON")){
 			printf("%s",yytext);	
@@ -4268,8 +4767,9 @@ YY_RULE_SETUP
 	case 21:
 YY_RULE_SETUP
 
-#line 450 "scanner.l"
+#line 480 "scanner.l"
 {
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("STAR")){
 			printf("%s",yytext);	
@@ -4288,8 +4788,9 @@ YY_RULE_SETUP
 	case 22:
 YY_RULE_SETUP
 
-#line 469 "scanner.l"
+#line 500 "scanner.l"
 {
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("UNDERSCORE")){
 			printf("%s",yytext);	
@@ -4308,8 +4809,9 @@ YY_RULE_SETUP
 	case 23:
 YY_RULE_SETUP
 
-#line 486 "scanner.l"
+#line 518 "scanner.l"
 {
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("UPPER")){
 			printf("%s",yytext);	
@@ -4328,8 +4830,9 @@ YY_RULE_SETUP
 	case 24:
 YY_RULE_SETUP
 
-#line 503 "scanner.l"
+#line 536 "scanner.l"
 {
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("WS")){
 			printf("%s",yytext);	
@@ -4348,8 +4851,30 @@ YY_RULE_SETUP
 	case 25:
 YY_RULE_SETUP
 
-#line 520 "scanner.l"
+#line 553 "scanner.l"
 {
+	strcat(line_buffer,yytext);
+	if(yyleng==1){
+		if(search_print_struct("FSLASH")){
+			printf("%s",yytext);	
+        } else { 
+			printf("{FSLASH}");
+		}
+	} else {
+		if(search_print_struct("FSLASH")){
+			printf("%s",yytext);	
+		} else {	
+			printf("{FSLASH}{%d}",yyleng);
+		}
+	}
+}
+	/*LINTED*/break;
+	case 26:
+YY_RULE_SETUP
+
+#line 570 "scanner.l"
+{
+	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("XDIGIT")){
 			printf("%s",yytext);	
@@ -4365,20 +4890,20 @@ YY_RULE_SETUP
 	}
 }
 	/*LINTED*/break;
-	case 26:
-YY_RULE_SETUP
-
-#line 538 "scanner.l"
-;
-	/*LINTED*/break;
 	case 27:
 YY_RULE_SETUP
 
-#line 539 "scanner.l"
+#line 589 "scanner.l"
+;
+	/*LINTED*/break;
+	case 28:
+YY_RULE_SETUP
+
+#line 590 "scanner.l"
 yyecho();
 	/*LINTED*/break;
-
-
+#line 4906 "lex.S1_.c"
+#line 4907 "lex.S1_.c"
 	case YY_STATE_EOF(INITIAL):
 		/* FALLTHROUGH */
 	case YY_STATE_EOF(line):
@@ -5378,7 +5903,7 @@ void yyfree (void * ptr ) {
 			free( (char *) ptr );	/* see yyrealloc() for (char *) cast */
 }
 
-#line 539 "scanner.l"
+#line 590 "scanner.l"
 
 
 
