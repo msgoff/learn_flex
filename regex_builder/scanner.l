@@ -26,7 +26,7 @@ struct PRINT {
 	"INTEGER",false,
 	"LBRACE",false,
 	"LBRACK",false,
-	"LOWER",false,
+	"LOWER",true,
 	"LPAREN",false,
 	"LT",false,
 	"MONTH",false,
@@ -106,54 +106,54 @@ WS	[[:blank:]]
 	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("COLON")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
         } else { 
-			printf("{COLON}");
+			printf("COLON ");
 		}
 	} else {
 		if(search_print_struct("COLON")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
 		} else {	
-			printf("{COLON}{%d}",yyleng);
-		}
+			printf("COLON{%d} ",yyleng);
+		
 	}
-}
+}}
     
 
 {COMMA}+	{
 	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("COMMA")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
         } else { 
-			printf("{COMMA}");
+			printf("COMMA ");
 		}
 	} else {
 		if(search_print_struct("COMMA")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
 		} else {	
-			printf("{COMMA}{%d}",yyleng);
-		}
+			printf("COMMA{%d} ",yyleng);
+		
 	}
-}
+}}
     
 
 {COMMENT}+	{
 	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("COMMENT")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
         } else { 
-			printf("{COMMENT}");
+			printf("COMMENT ");
 		}
 	} else {
 		if(search_print_struct("COMMENT")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
 		} else {	
-			printf("{COMMENT}{%d}",yyleng);
-		}
+			printf("COMMENT{%d} ",yyleng);
+		
 	}
-}
+}}
     
 
 
@@ -161,73 +161,70 @@ WS	[[:blank:]]
 	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("DIGIT")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
         } else { 
-			printf("{DIGIT}");
+			printf("DIGIT ");
 		}
 	} else {
 		if(search_print_struct("DIGIT")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
 		} else {	
-			printf("{DIGIT}{%d}",yyleng);
-		}
+			printf("DIGIT{%d} ",yyleng);
+		
 	}
-}
-    
+}}  
 
 {DOLLAR}+	{
 	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("DOLLAR")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
         } else { 
-			printf("{DOLLAR}");
+			printf("DOLLAR ");
 		}
 	} else {
 		if(search_print_struct("DOLLAR")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
 		} else {	
-			printf("{DOLLAR}{%d}",yyleng);
-		}
-	}
-}
-    
+			printf("DOLLAR{%d} ",yyleng);
+		
+	
+}}}  
 
 {DOT}+	{
 	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("DOT")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
         } else { 
-			printf("{DOT}");
+			printf("DOT ");
 		}
 	} else {
 		if(search_print_struct("DOT")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
 		} else {	
-			printf("{DOT}{%d}",yyleng);
-		}
+			printf("DOT{%d} ",yyleng);
+		
 	}
-}
+}}
     
 
 {ESCAPESEQUENCE}+	{
 	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("ESCAPESEQUENCE")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
         } else { 
-			printf("{ESCAPESEQUENCE}");
+			printf("ESCAPESEQUENCE ");
 		}
 	} else {
 		if(search_print_struct("ESCAPESEQUENCE")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
 		} else {	
-			printf("{ESCAPESEQUENCE}{%d}",yyleng);
-		}
+			printf("ESCAPESEQUENCE{%d} ",yyleng);
+		
 	}
-}
-    
+}}  
 
     
 
@@ -235,128 +232,121 @@ WS	[[:blank:]]
 	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("GT")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
         } else { 
-			printf("{GT}");
+			printf("GT ");
 		}
 	} else {
 		if(search_print_struct("GT")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
 		} else {	
-			printf("{GT}{%d}",yyleng);
-		}
+			printf("GT{%d} ",yyleng);
+		
 	}
-}
-    
+}}  
 
 
 {INTEGER}+	{
 	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("INTEGER")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
         } else { 
-			printf("{INTEGER}");
+			printf("INTEGER ");
 		}
 	} else {
 		if(search_print_struct("INTEGER")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
 		} else {	
-			printf("{INTEGER}{%d}",yyleng);
-		}
+			printf("INTEGER{%d} ",yyleng);
+		
 	}
-}
-    
+}}  
 
 {LBRACE}+	{
 	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("LBRACE")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
         } else { 
-			printf("{LBRACE}");
+			printf("LBRACE ");
 		}
 	} else {
 		if(search_print_struct("LBRACE")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
 		} else {	
-			printf("{LBRACE}{%d}",yyleng);
-		}
+			printf("LBRACE{%d} ",yyleng);
+		
 	}
-}
-    
+}}  
 
 {LBRACK}+	{
 	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("LT")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
         } else { 
-			printf("{LBRACK}");
+			printf("LBRACK ");
 		}
 	} else {
 		if(search_print_struct("LT")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
 		} else {	
-			printf("{LBRACK}{%d}",yyleng);
-		}
+			printf("LBRACK{%d} ",yyleng);
+		
 	}
-}
-    
+}}  
 
 {LOWER}+	{
 	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("LOWER")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
         } else { 
-			printf("{LOWER}");
+			printf("LOWER");
 		}
 	} else {
 		if(search_print_struct("LOWER")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
 		} else {	
-			printf("{LOWER}{%d}",yyleng);
-		}
+			printf("LOWER{%d} ",yyleng);
+		
 	}
-}
-    
+}}  
 
 {LPAREN}+	{
 	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("LPAREN")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
         } else { 
-			printf("{LPAREN}");
+			printf("LPAREN ");
 		}
 	} else {
 		if(search_print_struct("LPAREN")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
 		} else {	
-			printf("{LPAREN}{%d}",yyleng);
-		}
+			printf("LPAREN{%d} ",yyleng);
+		
 	}
-}
-    
+}}  
 
 {LT}+	{
 	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("WORD")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
         } else { 
-			printf("{LT}");
+			printf("LT ");
 		}
 	} else {
 		if(search_print_struct("WORD")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
 		} else {	
-			printf("{LT}{%d}",yyleng);
-		}
+			printf("LT{%d} ",yyleng);
+		
 	}
-}
-    
+}}  
 
     
 
@@ -364,78 +354,73 @@ WS	[[:blank:]]
 	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("NL")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
         } else { 
-			printf("{NL}\n");
+			printf("NL\n");
 		}
 	} else {
 		if(search_print_struct("NL")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
 		} else {	
-			printf("{NL}{%d}\n",yyleng);
+			printf("NL{%d}\n",yyleng);
 		}
 	}
 	if(strlen(line_buffer)>0){
 		printf("%s\n\n",line_buffer);
 	}
 	memset(line_buffer,'\0',2048);
-}
-    
+}  
 
 {OR}+	{
 	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("OR")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
         } else { 
-			printf("{OR}");
+			printf("OR ");
 		}
 	} else {
 		if(search_print_struct("OR")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
 		} else {	
-			printf("{OR}{%d}",yyleng);
-		}
+			printf("OR{%d} ",yyleng);
+		
 	}
-}
-    
+}}   
 
 {POWER}+	{
 	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("POWER")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
         } else { 
-			printf("{POWER}");
+			printf("POWER ");
 		}
 	} else {
 		if(search_print_struct("POWER")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
 		} else {	
-			printf("{POWER}{%d}",yyleng);
-		}
-	}
-}
-    
-
+			printf("POWER{%d} ",yyleng);
+		
+	
+}}  }
 
 {RBRACE}+	{
 	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("RBRACE")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
         } else { 
-			printf("{RBRACE}");
+			printf("RBRACE ");
 		}
 	} else {
 		if(search_print_struct("RBRACE")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
 		} else {	
-			printf("{RBRACE}{%d}",yyleng);
-		}
-	}
-}
-    
+			printf("RBRACE{%d} ",yyleng);
+		
+	
+}}}
 
     
 
@@ -443,37 +428,35 @@ WS	[[:blank:]]
 	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("RPAREN")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
         } else { 
-			printf("{RPAREN}");
+			printf("RPAREN ");
 		}
 	} else {
 		if(search_print_struct("RPAREN")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
 		} else {	
-			printf("{RPAREN}{%d}",yyleng);
-		}
-	}
-}
-    
+			printf("RPAREN{%d} ",yyleng);
+		
+	
+}}} 
 
 {SEMICOLON}+	{
 	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("SEMICOLON")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
         } else { 
-			printf("{SEMICOLON}");
+			printf("SEMICOLON ");
 		}
 	} else {
 		if(search_print_struct("SEMICOLON")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
 		} else {	
-			printf("{SEMICOLON}{%d}",yyleng);
-		}
+			printf("SEMICOLON{%d} ",yyleng);
+		
 	}
-}
-    
+}} 
 
     
 
@@ -481,19 +464,18 @@ WS	[[:blank:]]
 	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("STAR")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
         } else { 
-			printf("{STAR}");
+			printf("STAR ");
 		}
 	} else {
 		if(search_print_struct("STAR")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
 		} else {	
-			printf("{STAR}{%d}",yyleng);
-		}
-	}
-}
-    
+			printf("STAR{%d} ",yyleng);
+		
+	
+}}}  
 
     
 
@@ -501,93 +483,87 @@ WS	[[:blank:]]
 	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("UNDERSCORE")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
         } else { 
-			printf("{UNDERSCORE}");
+			printf("UNDERSCORE ");
 		}
 	} else {
 		if(search_print_struct("UNDERSCORE")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
 		} else {	
-			printf("{UNDERSCORE}{%d}",yyleng);
-		}
-	}
-}
-    
+			printf("UNDERSCORE{%d} ",yyleng);
+		
+	
+}}} 
 
 {UPPER}+	{
 	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("UPPER")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
         } else { 
-			printf("{UPPER}");
+			printf("UPPER ");
 		}
 	} else {
 		if(search_print_struct("UPPER")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
 		} else {	
-			printf("{UPPER}{%d}",yyleng);
-		}
-	}
-}
-    
+			printf("UPPER{%d} ",yyleng);
+		
+	
+}}} 
 
 {WS}+	{
 	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("WS")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
         } else { 
-			printf("{WS}");
+			printf("WS ");
 		}
 	} else {
 		if(search_print_struct("WS")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
 		} else {	
-			printf("{WS}{%d}",yyleng);
-		}
-	}
-}
-    
+			printf("WS{%d} ",yyleng);
+		
+	
+}}}
+
+ 
 {FSLASH}+	{
 	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("FSLASH")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
         } else { 
-			printf("{FSLASH}");
+			printf("FSLASH ");
 		}
 	} else {
 		if(search_print_struct("FSLASH")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
 		} else {	
-			printf("{FSLASH}{%d}",yyleng);
-		}
-	}
-}
+			printf("FSLASH{%d} ",yyleng);
+		
+	
+}}}
 
 {XDIGIT}+	{
 	strcat(line_buffer,yytext);
 	if(yyleng==1){
 		if(search_print_struct("XDIGIT")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
         } else { 
 			printf("{XDIGIT}");
 		}
 	} else {
 		if(search_print_struct("")){
-			printf("%s",yytext);	
+			printf("%s ",yytext);	
 		} else {	
-			printf("{XDIGIT}{%d}",yyleng);
-		}
+			printf("XDIGIT{%d} ",yyleng);
 	}
-}
-
+}}
 
 
 .	;
 %%
-
-
-    
