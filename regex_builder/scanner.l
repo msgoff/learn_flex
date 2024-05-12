@@ -43,6 +43,7 @@ struct PRINT {
 	"UPPER",false,
 	"WS",false,
 	"XDIGIT",false,
+	"EQUAL", false,
 };
 
 bool search_print_struct(char* state){
@@ -87,7 +88,6 @@ POWER "^"
 OR "|"
 STAR "*"
 SEMICOLON ";"
-ESCAPESEQUENCE \\[btnfr\"\']
 DOLLAR "$"
 DOT "."
 COMMA ","
@@ -97,6 +97,9 @@ DAY	"Mon"|"Tue"|"Wed"|"Thu"|"Fri"|"Sat"|"Sun"
 MONTH	"Jan"|"Feb"|"Mar"|"Apr"|"May"|"Jun"|"Jul"|"Aug"|"Sep"|"Oct"|"Nov"|"Dec"
 TIMEZONE	"UT"|"GMT"|"EST"|"EDT"|"CST"|"CDT"|"MST"|"MDT"|"PST"|"PDT"
 WS	[[:blank:]]
+EQUAL "="
+PERCENT "%"
+BACKSLASH "\\"
 %x line
 
 %%
@@ -209,19 +212,19 @@ WS	[[:blank:]]
 }}
     
 
-{ESCAPESEQUENCE}+	{
+{BACKSLASH}+	{
 	strcat(line_buffer,yytext);
 	if(yyleng==1){
-		if(search_print_struct("ESCAPESEQUENCE")){
+		if(search_print_struct("BACKSLASH")){
 			printf("%s ",yytext);	
         } else { 
-			printf("ESCAPESEQUENCE ");
+			printf("BACKSLASH ");
 		}
 	} else {
-		if(search_print_struct("ESCAPESEQUENCE")){
+		if(search_print_struct("BACKSLASH")){
 			printf("%s ",yytext);	
 		} else {	
-			printf("ESCAPESEQUENCE{%d} ",yyleng);
+			printf("BACKSLASH{%d} ",yyleng);
 		
 	}
 }}  
@@ -512,6 +515,38 @@ WS	[[:blank:]]
 		
 	
 }}} 
+{EQUAL}+	{
+	strcat(line_buffer,yytext);
+	if(yyleng==1){
+		if(search_print_struct("EQUAL")){
+			printf("%s ",yytext);	
+        } else { 
+			printf("EQUAL ");
+		}
+	} else {
+		if(search_print_struct("EQUAL")){
+			printf("%s ",yytext);	
+		} else {	
+			printf("EQUAL{%d} ",yyleng);
+		
+	
+}}}
+{PERCENT}+	{
+	strcat(line_buffer,yytext);
+	if(yyleng==1){
+		if(search_print_struct("PERCENT")){
+			printf("%s ",yytext);	
+        } else { 
+			printf("PERCENT ");
+		}
+	} else {
+		if(search_print_struct("PERCENT")){
+			printf("%s ",yytext);	
+		} else {	
+			printf("PERCENT{%d} ",yyleng);
+		
+	
+}}}
 
 {WS}+	{
 	strcat(line_buffer,yytext);
